@@ -2,17 +2,10 @@
 Thumbs.db
 
 /.bundle
-
-/db/*.sqlite3
-
-/log/*.log
-/tmp
-
+db/*.sqlite3
+log/*.log
+tmp/
 db/schema.rb
+public/system/
+vendor/assets/components/
 
-/public/system
-
-*.sublime-project
-*.sublime-workspace
-
-vendor/assets/components
