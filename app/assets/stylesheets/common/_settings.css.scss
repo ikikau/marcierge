@@ -1,0 +1,21 @@
+
+/*  Compass Config
+-----------------------------------------------*/
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: true;
+$experimental-support-for-mozilla: true;
+$experimental-support-for-webkit: true;
+$experimental-support-for-opera: true;
+$experimental-support-for-microsoft: true;
+
+
+/*  Font
+-----------------------------------------------*/
+$family: unquote("Arial, Helvetica, 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo");
+$family-code: unquote("Monaco, 'Courier New', Courier, monospace, 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo");
+
+
+/*  Color Scheme
+-----------------------------------------------*/
+$sample-color: #fff;
+

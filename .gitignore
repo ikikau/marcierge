@@ -7,5 +7,5 @@ log/*.log
 tmp/
 db/schema.rb
 public/system/
-vendor/assets/components/
+app/assets/javascripts/lib
 
