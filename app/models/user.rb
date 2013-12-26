@@ -1,7 +1,7 @@
 
 class User < ActiveRecord::Base
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username
+  attr_accessible :email, :password, :password_confirmation, :remember_me
 
   attr_readonly :sign_in_count, :current_sign_in_at, :current_sign_in_ip, :last_sign_in_at, :last_sign_in_ip
 
@@ -15,12 +15,6 @@ class User < ActiveRecord::Base
   #  Validations
   #-----------------------------------------------
   validates :email, presence: true
-  validates :username,
-    presence: true,
-    uniqueness: { case_sensitive: false },
-    length: { in: 4..20 },
-    format: { with: /\A[a-z][a-z0-9]+\z/ },
-    exclusion: { in: ENV['RESERVED_WORDS'].split(' ') }
 
 
   #  Devise
