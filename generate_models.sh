@@ -14,7 +14,7 @@ rails g devise user
 #-----------------------------------------------
 
 # belongs_to :user
-rails g admin \
+rails g model admin \
   name:string \
   user_id:integer
 
@@ -31,7 +31,7 @@ rails g admin \
 rails g model creator \
   user_id:integer \
   name:string \
-  profile:text \ # プロフィールページで表示される紹介文
+  profile:text \
   avator_id:integer
 
 
