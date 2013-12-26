@@ -19,7 +19,6 @@ class Event < ActiveRecord::Base
 
   #  Validations
   #-----------------------------------------------
-  validates :creator_id, numericality: true
   validates :title, presence: true
 
 

@@ -24,7 +24,7 @@ module Admin
     #  Previous Params
     #-----------------------------------------------
     def previous_params
-      flash[:params] || {}
+      flash[:params] || params
     end
     def save_current_params
       flash[:params] = params

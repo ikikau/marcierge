@@ -15,6 +15,9 @@ gem 'redcarpet'
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'active_model_serializers'
+gem 'simple_form'
+gem 'foundation-rails'
+
 
 group :assets do
   gem 'sass-rails', '~> 3.2.3'

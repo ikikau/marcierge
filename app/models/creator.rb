@@ -14,7 +14,6 @@ class Creator < ActiveRecord::Base
   #  Validations
   #-----------------------------------------------
   # validates :user, presence: true
-  validates :user_id, numericality: true
   validates :name, presence: true
 
 end

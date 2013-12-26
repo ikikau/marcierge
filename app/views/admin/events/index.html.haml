@@ -1,0 +1,13 @@
+
+%h1 Events
+
+%p= link_to 'New event', new_admin_event_path
+
+%ul
+  - @events.each do |event|
+    %li
+      = link_to event.title, edit_admin_event_path(event)
+      %br
+      = link_to '[edit]', edit_admin_event_path(event)
+      = link_to '[delete]', admin_event_path(event), remote: true, method: :delete
+

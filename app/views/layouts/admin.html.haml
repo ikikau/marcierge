@@ -1,15 +1,15 @@
 !!!
 %html
   %head
-    %title= 'Marcierge'
+    %title= 'Marcierge Admin'
     = csrf_meta_tags
-    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag 'admin/application', media: 'all'
 
     :coffee
       window.CONTROLLER_NAME = '#{controller_name}'
       window.ACTION_NAME = '#{action_name}'
 
-    = javascript_include_tag 'application'
+    = javascript_include_tag 'admin/application'
     = view_script_tag
 
 
