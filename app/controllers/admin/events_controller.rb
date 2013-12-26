@@ -30,6 +30,8 @@ class Admin::EventsController < Admin::ApplicationController
     @event = Event.find params[:id]
 
     if @event.update_attributes params[:event]
+      redirect_to edit_admin_event_path(@event),
+        notice: 'イベントが更新されました'
     else
       flash.now[:alert] = 'イベントの更新に失敗しました'
       render :edit

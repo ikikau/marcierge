@@ -1,6 +1,7 @@
 
 class User < ActiveRecord::Base
 
+  attr_accessible :name, :profile, :avator_id
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
   attr_readonly :sign_in_count, :current_sign_in_at, :current_sign_in_ip, :last_sign_in_at, :last_sign_in_ip
@@ -8,13 +9,13 @@ class User < ActiveRecord::Base
 
   #  Associations
   #-----------------------------------------------
-  has_one :admin_user
-  has_one :creator
+  has_one :avator, class_name: '::Medium'
+  has_many :events, dependent: :destroy
 
 
   #  Validations
   #-----------------------------------------------
-  validates :email, presence: true
+  validates :name, presence: true
 
 
   #  Devise
@@ -24,31 +25,8 @@ class User < ActiveRecord::Base
     :recoverable,
     :rememberable,
     :trackable,
-    :validatable
-    # :confirmable
-
-
-  #  Set current user
-  #-----------------------------------------------
-  class << self
-    def current_user=(user)
-      Thread.current[:current_user] = user
-    end
-
-    def current_user
-      Thread.current[:current_user]
-    end
-  end
-
-
-  #  User role
-  #-----------------------------------------------
-  def admin?
-    admin.present?
-  end
-  def creator?
-    creator.present?
-  end
+    :validatable,
+    :confirmable
 
 end
 

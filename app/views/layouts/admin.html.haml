@@ -9,11 +9,14 @@
       window.CONTROLLER_NAME = '#{controller_name}'
       window.ACTION_NAME = '#{action_name}'
 
+  %body{ id: controller_name, class: action_name }
+
     = javascript_include_tag 'admin/application'
     = view_script_tag
 
+    = render 'admin/application/header'
+    = render 'admin/application/flash', flash: flash
 
-  %body{ id: controller_name, class: action_name }
-
-    = yield
+    #main
+      = yield
 

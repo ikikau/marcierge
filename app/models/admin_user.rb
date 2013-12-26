@@ -1,19 +1,24 @@
 
-class Admin < ActiveRecord::Base
+class AdminUser < ActiveRecord::Base
 
-  attr_accessible :name, :user_id
+  attr_accessible :name
+  attr_accessible :email, :password, :password_confirmation, :remember_me
 
-
-  #  Associations
-  #-----------------------------------------------
-  belongs_to :user
+  attr_readonly :sign_in_count, :current_sign_in_at, :current_sign_in_ip, :last_sign_in_at, :last_sign_in_ip
 
 
   #  Validations
   #-----------------------------------------------
-  validates :user, presence: true
-  validates :user_id, numericality: true
   validates :name, presence: true
+
+
+  #  Devise
+  #-----------------------------------------------
+  devise :database_authenticatable,
+    :recoverable,
+    :rememberable,
+    :trackable,
+    :validatable
 
 
   #  Avatar

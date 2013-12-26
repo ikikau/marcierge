@@ -15,7 +15,7 @@ $base-font-size: 10px;
 // $base-line-height: 150%;
 
 // This is the default html and body font-size for the base rem value.
-$rem-base: 10px;
+$rem-base: 12px;
 
 // We use this to control whether or not CSS classes come through in the gem files.
 // $include-html-classes: true;
@@ -852,8 +852,8 @@ $table-row-font-color: #222;
 $table-line-height: rem-calc(13);
 
 // These are for controlling the display and margin of tables
-// $table-display: table-cell;
-$table-margin-bottom: none;
+// $table-display: table;
+// $table-margin-bottom: none;
 
 //
 // TABS

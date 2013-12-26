@@ -7,8 +7,8 @@
 
 = simple_form_for [:admin, @event] do |f|
 
-  = f.input :title, label: 'タイトル'
-  = f.input :content, label: 'イベント概要'
+  = f.input :title
+  = f.input :content, label: 'Description for event'
 
   = f.button :submit
 

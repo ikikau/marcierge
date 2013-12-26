@@ -2,14 +2,20 @@ Marcierge::Application.routes.draw do
 
   #  Admin
   #-----------------------------------------------
-  namespace :admin do
-    devise_for :user,
-      path: '/',
-      path_names: { sign_in: 'login', sign_out: 'logout' },
-      skip: :registrations
+  devise_for :admin_users,
+    path: '/admin',
+    path_names: {
+      sign_in: 'login',
+      sign_out: 'logout'
+    },
+    controllers: {
+      sessions: 'admin/sessions'
+    },
+    skip: :registrations
 
+  namespace :admin do
     resources :admin_users, except: :show
-    resources :creators, except: :show
+    resources :users, except: :show
     resources :events, except: :show
     resources :information, except: :show
     resources :features, except: :show
@@ -27,7 +33,7 @@ Marcierge::Application.routes.draw do
 
   #  Creators
   #-----------------------------------------------
-  resources :creators, only: %w[index show] do
+  resources :users, only: %w[index show] do
     resources :events, only: :index
   end
 

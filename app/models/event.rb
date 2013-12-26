@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
 
   extend Enumerize
 
-  attr_accessible :content, :creator_id, :status, :title
+  attr_accessible :content, :user_id, :status, :title
 
   enumerize :status, in: [:private, :public], default: :private
 
@@ -13,7 +13,7 @@ class Event < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :locations, :themes
 
-  belongs_to :creator
+  belongs_to :user
   has_many :event_dates, dependent: :destroy
 
 

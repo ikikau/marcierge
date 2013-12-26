@@ -1,0 +1,52 @@
+
+.fixed
+  %nav.top-bar(data-topbar)
+    %ul.title-area
+      %li.name
+        %h1= link_to 'Marcierge Admin', admin_root_path
+
+    - if admin_user_signed_in?
+      %section.top-bar-section
+        %ul.left
+          %li.divider
+          %li.has-dropdown{ class: current_page?(controller: :events) && 'active' }
+            = link_to 'Events', admin_events_path
+
+            %ul.dropdown
+              %li= link_to 'Create new event', new_admin_event_path
+
+          %li.divider
+          %li.has-dropdown{ class: current_page?(controller: :users) && 'active' }
+            = link_to 'Creators', admin_users_path
+
+            %ul.dropdown
+              %li= link_to 'Add new creator', new_admin_user_path
+
+          %li.divider
+          %li.has-dropdown{ class: current_page?(controller: :admin_users) && 'active' }
+            = link_to 'Admin Users', admin_admin_users_path
+
+            %ul.dropdown
+              %li= link_to 'Add new admin user', new_admin_admin_user_path
+
+          %li.divider
+          %li.has-dropdown{ class: current_page?(controller: :information) && 'active' }
+            = link_to 'Information', admin_information_index_path
+
+            %ul.dropdown
+              %li= link_to 'Create new information', new_admin_information_path
+
+          %li.divider
+          %li.has-dropdown{ class: current_page?(controller: :features) && 'active' }
+            = link_to 'Features', admin_features_path
+
+            %ul.dropdown
+              %li= link_to 'Create new feature', new_admin_feature_path
+
+        %ul.right
+          %li.has-dropdown
+            %a= current_admin_user.name
+
+            %ul.dropdown
+              %li= link_to 'Logout', destroy_admin_user_session_path
+

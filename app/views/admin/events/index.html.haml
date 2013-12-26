@@ -1,13 +1,19 @@
 
 %h1 Events
 
-%p= link_to 'New event', new_admin_event_path
+%p= link_to 'New event', new_admin_event_path, class: 'button tiny'
 
-%ul
-  - @events.each do |event|
-    %li
-      = link_to event.title, edit_admin_event_path(event)
-      %br
-      = link_to '[edit]', edit_admin_event_path(event)
-      = link_to '[delete]', admin_event_path(event), remote: true, method: :delete
+%table
+  %thead
+    %tr
+      %th Title
+      %th Action
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td
+          = link_to event.title, edit_admin_event_path(event)
+        %td
+          = link_to '[edit]', edit_admin_event_path(event)
+          = link_to '[delete]', admin_event_path(event), remote: true, method: :delete
 

@@ -1,0 +1,11 @@
+
+- if flash[:alert]
+  .alert-box(data-alert)
+    = flash[:alert]
+    %a.close &times;
+
+- if flash[:notice]
+  .alert-box.success(data-alert)
+    = flash[:notice]
+    %a.close &times;
+
