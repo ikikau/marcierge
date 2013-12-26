@@ -1,4 +1,4 @@
-#= require lib/jquery/jquery.min
+#= require lib/jquery.min
 #= require jquery_ujs
 #
 #= require_tree common
