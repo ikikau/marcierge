@@ -11,6 +11,7 @@ class Event < ActiveRecord::Base
   #  Associations
   #-----------------------------------------------
   acts_as_taggable
+  acts_as_taggable_on :locations, :themes
 
   belongs_to :creator
   has_many :event_dates, dependent: :destroy

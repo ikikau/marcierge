@@ -14,11 +14,7 @@ class EventDate < ActiveRecord::Base
   validates :event, presence: true
   validates :event_id, numericality: true
   validates :begin_at, presence: true
-
-
-  #  Callbacks
-  #-----------------------------------------------
-  before_save :check_event_date
+  validate :valid_event_date?
 
 
 private
@@ -26,10 +22,10 @@ private
 
   #  Callback: Check if begin and end datetime is valid
   #-----------------------------------------------
-  def check_event_date
+  def valid_event_date?
     unless begin_at < end_at
-      # TODO: error message
-      # self.errors.add :end_at, ''
+      # TODO: change error message
+      self.errors.add :end_at, 'invaild term'
       false
     end
   end

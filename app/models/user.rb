@@ -46,5 +46,15 @@ class User < ActiveRecord::Base
     end
   end
 
+
+  #  User role
+  #-----------------------------------------------
+  def admin?
+    admin.present?
+  end
+  def creator?
+    creator.present?
+  end
+
 end
 
