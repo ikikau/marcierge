@@ -1,0 +1,8 @@
+
+development:
+
+  APP_DOMAIN: 'marcierge.jp'
+  MAIL_NOREPLY: 'no-reply@marcierge.jp'
+
+  RESERVED_WORDS: 'master webmaster admin admins administrator'
+
