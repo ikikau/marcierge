@@ -10,8 +10,11 @@ Marcierge::Application.routes.draw do
       get :logout, to: 'admin#logout'
     end
 
-    resources :creators
-    resources :admins
+    resources :admins, except: :show
+    resources :creators, except: :show
+    resources :events, except: :show
+    resources :information, except: :show
+    resources :features, except: :show
   end
 
 
@@ -24,24 +27,24 @@ Marcierge::Application.routes.draw do
 
   #  Creators
   #-----------------------------------------------
-  resources :creators do
-    resources :events
+  resources :creators, only: %w[index show] do
+    resources :events, only: %w[index]
   end
 
 
   #  Events
   #-----------------------------------------------
-  resources :events
+  resources :events, only: %w[index show]
 
 
   #  Information
   #-----------------------------------------------
-  resources :information
+  resources :information, only: %w[index show]
 
 
   #  Features
   #-----------------------------------------------
-  resources :features
+  resources :features, only: %w[index show]
 
 
   #  Pages
