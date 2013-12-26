@@ -9,35 +9,35 @@
       %section.top-bar-section
         %ul.left
           %li.divider
-          %li.has-dropdown{ class: current_page?(controller: :events) && 'active' }
+          %li.has-dropdown{ class: current_page?(controller: :events, action: action_name) && 'active' }
             = link_to 'Events', admin_events_path
 
             %ul.dropdown
               %li= link_to 'Create new event', new_admin_event_path
 
           %li.divider
-          %li.has-dropdown{ class: current_page?(controller: :users) && 'active' }
+          %li.has-dropdown{ class: current_page?(controller: :users, action: action_name) && 'active' }
             = link_to 'Creators', admin_users_path
 
             %ul.dropdown
               %li= link_to 'Add new creator', new_admin_user_path
 
           %li.divider
-          %li.has-dropdown{ class: current_page?(controller: :admin_users) && 'active' }
+          %li.has-dropdown{ class: current_page?(controller: :admin_users, action: action_name) && 'active' }
             = link_to 'Admin Users', admin_admin_users_path
 
             %ul.dropdown
               %li= link_to 'Add new admin user', new_admin_admin_user_path
 
           %li.divider
-          %li.has-dropdown{ class: current_page?(controller: :information) && 'active' }
+          %li.has-dropdown{ class: current_page?(controller: :information, action: action_name) && 'active' }
             = link_to 'Information', admin_information_index_path
 
             %ul.dropdown
               %li= link_to 'Create new information', new_admin_information_path
 
           %li.divider
-          %li.has-dropdown{ class: current_page?(controller: :features) && 'active' }
+          %li.has-dropdown{ class: current_page?(controller: :features, action: action_name) && 'active' }
             = link_to 'Features', admin_features_path
 
             %ul.dropdown
