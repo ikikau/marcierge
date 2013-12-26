@@ -6,7 +6,7 @@ gem 'mysql2'
 gem 'figaro'
 gem 'kaminari'
 gem 'paperclip'
-
+gem 'enumerize'
 gem 'devise'
 gem 'oj'
 gem 'strong_parameters'
