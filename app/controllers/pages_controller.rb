@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
-  def home
+  def home; end
 
-  end
+  def sample; end
 
 end

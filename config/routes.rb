@@ -3,24 +3,25 @@ Marcierge::Application.routes.draw do
   #  Admin
   #-----------------------------------------------
   namespace :admin do
-    root to: 'admin#index'
-
-    devise_scope :user do
-      get :login, to: 'admin#login'
-      get :logout, to: 'admin#logout'
-    end
+    devise_for :user,
+      path: '/',
+      path_names: { sign_in: 'login', sign_out: 'logout' },
+      skip: :registrations,
+      controllers: { sessions: 'admin/sessions' }
 
     resources :admins, except: :show
     resources :creators, except: :show
     resources :events, except: :show
     resources :information, except: :show
     resources :features, except: :show
+
+    root to: 'events#index'
   end
 
 
   #  Admin for creator
   #-----------------------------------------------
-  namespace :admin_creator do
+  namespace :creator_admin do
     # l8r
   end
 
@@ -28,7 +29,7 @@ Marcierge::Application.routes.draw do
   #  Creators
   #-----------------------------------------------
   resources :creators, only: %w[index show] do
-    resources :events, only: %w[index]
+    resources :events, only: :index
   end
 
 

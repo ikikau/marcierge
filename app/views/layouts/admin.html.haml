@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title= 'Marcierge'
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+
+    :coffee
+      window.CONTROLLER_NAME = '#{controller_name}'
+      window.ACTION_NAME = '#{action_name}'
+
+    = javascript_include_tag 'application'
+    = view_script_tag
+
+
+  %body{ id: controller_name, class: action_name }
+
+    = yield
+
