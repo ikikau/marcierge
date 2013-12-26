@@ -6,10 +6,9 @@ Marcierge::Application.routes.draw do
     devise_for :user,
       path: '/',
       path_names: { sign_in: 'login', sign_out: 'logout' },
-      skip: :registrations,
-      controllers: { sessions: 'admin/sessions' }
+      skip: :registrations
 
-    resources :admins, except: :show
+    resources :admin_users, except: :show
     resources :creators, except: :show
     resources :events, except: :show
     resources :information, except: :show

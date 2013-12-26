@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   #  Associations
   #-----------------------------------------------
-  has_one :admin
+  has_one :admin_user
   has_one :creator
 
 
