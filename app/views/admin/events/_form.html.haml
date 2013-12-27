@@ -13,5 +13,9 @@
   = f.input :content
   = f.input :tag_list, as: :check_boxes, collection: Tag.all, value_method: :name
 
+  = f.simple_fields_for :event_dates do |e|
+    = e.datetime_select :begin_at
+    = e.datetime_select :end_at
+
   = f.button :submit
 

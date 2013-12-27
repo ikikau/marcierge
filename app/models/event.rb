@@ -21,6 +21,8 @@ class Event < ActiveRecord::Base
   belongs_to :creator, dependent: :destroy
   has_many :event_dates, dependent: :destroy
 
+  accepts_nested_attributes_for :event_dates
+
 
   #  Validations
   #-----------------------------------------------
