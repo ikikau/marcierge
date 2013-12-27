@@ -3,7 +3,7 @@
 class Admin::InformationController < Admin::ApplicationController
 
   def index
-    @information = Information.order('created_at').page(params[:page])
+    @information = Information.order('created_at desc').page(params[:page])
   end
 
   def new

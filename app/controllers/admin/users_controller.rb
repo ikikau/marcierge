@@ -3,7 +3,7 @@
 class Admin::UsersController < Admin::ApplicationController
 
   def index
-    @users = User.all
+    @users = User.order('created_at desc').page(params[:page])
   end
 
   def new

@@ -3,7 +3,7 @@
 class Admin::CreatorsController < Admin::ApplicationController
 
   def index
-    @creators = Creator.order('created_at').page(params[:page])
+    @creators = Creator.order('created_at desc').page(params[:page])
   end
 
   def new
