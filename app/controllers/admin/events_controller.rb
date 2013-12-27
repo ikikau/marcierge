@@ -3,7 +3,7 @@
 class Admin::EventsController < Admin::ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.order('created_at').page(params[:page])
   end
 
   def new

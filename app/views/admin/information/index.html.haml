@@ -20,3 +20,5 @@
           = link_to '編集', edit_admin_information_path(information), class: 'button tiny'
           = link_to '削除', admin_information_path(information), class: 'button tiny', method: :delete, confirm: '本当に削除しますか？'
 
+= paginate @information
+

@@ -24,5 +24,10 @@ class Information < ActiveRecord::Base
   scope :private, -> { where status: :private }
   scope :public, -> { where status: :public }
 
+
+  #  Kaminari
+  #-----------------------------------------------
+  paginates_per 20
+
 end
 

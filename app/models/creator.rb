@@ -20,6 +20,11 @@ class Creator < ActiveRecord::Base
   scope :without_user, -> { where user_id: nil }
 
 
+  #  Kaminari
+  #-----------------------------------------------
+  paginates_per 50
+
+
   #  Avatar
   #-----------------------------------------------
   def avatar_url(size = 48)

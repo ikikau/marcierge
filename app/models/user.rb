@@ -26,5 +26,10 @@ class User < ActiveRecord::Base
     :validatable,
     :confirmable
 
+
+  #  Kaminari
+  #-----------------------------------------------
+  paginates_per 50
+
 end
 

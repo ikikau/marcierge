@@ -3,7 +3,7 @@
 class Admin::FeaturesController < Admin::ApplicationController
 
   def index
-    @features = Feature.all
+    @features = Feature.order('created_at').page(params[:page])
   end
 
   def new

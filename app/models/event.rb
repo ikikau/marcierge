@@ -35,5 +35,10 @@ class Event < ActiveRecord::Base
   scope :private, -> { where status: :private }
   scope :public, -> { where status: :public }
 
+
+  #  Kaminari
+  #-----------------------------------------------
+  paginates_per 10
+
 end
 
