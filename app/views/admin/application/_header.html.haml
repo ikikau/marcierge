@@ -16,6 +16,13 @@
               %li= link_to '新規イベント', new_admin_event_path
 
           %li.divider
+          %li.has-dropdown{ class: controller_name == 'tags' && 'active' }
+            = link_to 'タグ', admin_tags_path
+
+            %ul.dropdown
+              %li= link_to '新規タグ', new_admin_tag_path
+
+          %li.divider
           %li.has-dropdown{ class: controller_name == 'creators' && 'active' }
             = link_to 'クリエータ', admin_creators_path
 

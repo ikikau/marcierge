@@ -15,6 +15,7 @@ Marcierge::Application.routes.draw do
 
   namespace :admin do
     resources :events, except: :show
+    resources :tags, except: :show
     resources :creators, except: :show
     resources :users, except: :show
     resources :admin_users, except: :show

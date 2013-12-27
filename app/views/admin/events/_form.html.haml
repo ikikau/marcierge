@@ -11,6 +11,7 @@
   = f.input :title, label: 'タイトル'
   = f.input :status, as: :radio_buttons, label: '公開状態'
   = f.input :content, label: 'イベント概要'
+  = f.input :tag_list, as: :check_boxes, label: 'タグ', collection: Tag.all, value_method: :name
 
   = f.button :submit
 
