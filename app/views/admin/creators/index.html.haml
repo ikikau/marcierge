@@ -26,7 +26,7 @@
           - if creator.user.present?
             = link_to "##{creator.user.id}", edit_admin_user_path(creator.id)
           - else
-            x
+            = link_to '新規ユーザ', new_admin_user_path(creator_id: creator.id)
         %td
           = creator.events.count
         %td

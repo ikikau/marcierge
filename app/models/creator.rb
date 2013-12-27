@@ -5,9 +5,9 @@ class Creator < ActiveRecord::Base
 
   #  Associations
   #-----------------------------------------------
-  belongs_to :user
   belongs_to :avatar, class_name: '::Medium'
   has_many :events, dependent: :destroy
+  has_one :user
 
 
   #  Validations

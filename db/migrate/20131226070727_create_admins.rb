@@ -1,8 +1,7 @@
 class CreateAdmins < ActiveRecord::Migration
   def change
-    create_table :admins do |t|
+    create_table :admin_users do |t|
       t.string :name
-      t.integer :user_id, null: false
 
       t.timestamps
     end
