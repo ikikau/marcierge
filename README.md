@@ -27,3 +27,26 @@ public/system
 
 - まだない
 
+
+開発用アカウント
+----------------
+
+基本的にパスワードはそのまま `password` として下さい。  
+わかりやすいので。
+
+<table>
+  <thead>
+    <tr>
+      <th>メールアドレス</th>
+      <th>パスワード</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>yuki@creasty.com</td>
+      <td>password</td>
+    </tr>
+  </tbody>
+</table>
+
+
