@@ -1,7 +1,6 @@
 
 class User < ActiveRecord::Base
 
-  attr_accessible :name, :profile, :avator_id
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
   attr_readonly :sign_in_count, :current_sign_in_at, :current_sign_in_ip, :last_sign_in_at, :last_sign_in_ip
@@ -9,13 +8,12 @@ class User < ActiveRecord::Base
 
   #  Associations
   #-----------------------------------------------
-  has_one :avator, class_name: '::Medium'
-  has_many :events, dependent: :destroy
+  belongs_to :creator
 
 
   #  Validations
   #-----------------------------------------------
-  validates :name, presence: true
+  validates :creator, presence: true
 
 
   #  Devise

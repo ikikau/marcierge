@@ -2,14 +2,12 @@
 
 one:
   user_id: 1
+  avatar_id: 1
   name: MyString
   profile: MyText
-   #: MyString
-  プロフィールページで表示される紹介文: MyString
 
 two:
   user_id: 1
+  avatar_id: 1
   name: MyString
   profile: MyText
-   #: MyString
-  プロフィールページで表示される紹介文: MyString

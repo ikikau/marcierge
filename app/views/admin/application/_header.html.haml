@@ -9,44 +9,57 @@
       %section.top-bar-section
         %ul.left
           %li.divider
-          %li.has-dropdown{ class: current_page?(controller: :events, action: action_name) && 'active' }
-            = link_to 'Events', admin_events_path
+          %li.has-dropdown{ class: controller_name == 'events' && 'active' }
+            = link_to 'イベント', admin_events_path
 
             %ul.dropdown
-              %li= link_to 'Create new event', new_admin_event_path
+              %li= link_to '新規イベント', new_admin_event_path
 
           %li.divider
-          %li.has-dropdown{ class: current_page?(controller: :users, action: action_name) && 'active' }
-            = link_to 'Creators', admin_users_path
+          %li.has-dropdown{ class: controller_name == 'creators' && 'active' }
+            = link_to 'クリエータ', admin_creators_path
 
             %ul.dropdown
-              %li= link_to 'Add new creator', new_admin_user_path
+              %li= link_to 'クリエータの登録', new_admin_creator_path
 
           %li.divider
-          %li.has-dropdown{ class: current_page?(controller: :admin_users, action: action_name) && 'active' }
-            = link_to 'Admin Users', admin_admin_users_path
+          %li.has-dropdown{ class: controller_name == 'users' && 'active' }
+            = link_to 'ユーザ', admin_users_path
 
             %ul.dropdown
-              %li= link_to 'Add new admin user', new_admin_admin_user_path
+              %li= link_to '新規ユーザ', new_admin_user_path
 
           %li.divider
-          %li.has-dropdown{ class: current_page?(controller: :information, action: action_name) && 'active' }
-            = link_to 'Information', admin_information_index_path
+          %li.has-dropdown{ class: controller_name == 'admin_users' && 'active' }
+            = link_to '管理者', admin_admin_users_path
 
             %ul.dropdown
-              %li= link_to 'Create new information', new_admin_information_path
+              %li= link_to '管理者の登録', new_admin_admin_user_path
 
           %li.divider
-          %li.has-dropdown{ class: current_page?(controller: :features, action: action_name) && 'active' }
-            = link_to 'Features', admin_features_path
+          %li.has-dropdown{ class: controller_name == 'information' && 'active' }
+            = link_to 'お知らせ', admin_information_index_path
 
             %ul.dropdown
-              %li= link_to 'Create new feature', new_admin_feature_path
+              %li= link_to '新規お知らせ', new_admin_information_path
+
+          %li.divider
+          %li.has-dropdown{ class: controller_name == 'features' && 'active' }
+            = link_to '特集記事', admin_features_path
+
+            %ul.dropdown
+              %li= link_to '新規特集記事', new_admin_feature_path
+
+          %li.divider
 
         %ul.right
+          %li.divider
           %li.has-dropdown
-            %a= current_admin_user.name
+            %a
+              = image_tag current_admin_user.avatar_url(22), size: '22x22'
+              &nbsp;
+              = current_admin_user.name
 
             %ul.dropdown
-              %li= link_to 'Logout', destroy_admin_user_session_path
+              %li= link_to 'ログアウト', destroy_admin_user_session_path
 

@@ -1,0 +1,15 @@
+
+- if @user.errors.any?
+  %ul
+    - @user.errors.full_messages.each do |message|
+      %li= message
+
+
+= simple_form_for [:admin, @user] do |f|
+
+  = f.input :email, label: 'Email'
+  = f.input :password, label: 'パスワード'
+  = f.input :password_confirmation, label: 'パスワード (確認用)'
+
+  = f.button :submit
+

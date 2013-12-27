@@ -3,9 +3,15 @@ class Event < ActiveRecord::Base
 
   extend Enumerize
 
-  attr_accessible :content, :user_id, :status, :title
+  attr_accessible :content, :user_id, :title
 
-  enumerize :status, in: [:private, :public], default: :private
+  enumerize :status,
+    in: {
+      private: 0,
+      public: 1,
+    },
+    default: :private,
+    predicates: true
 
 
   #  Associations

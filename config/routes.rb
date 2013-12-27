@@ -14,9 +14,10 @@ Marcierge::Application.routes.draw do
     skip: :registrations
 
   namespace :admin do
-    resources :admin_users, except: :show
-    resources :users, except: :show
     resources :events, except: :show
+    resources :creators, except: :show
+    resources :users, except: :show
+    resources :admin_users, except: :show
     resources :information, except: :show
     resources :features, except: :show
 
@@ -33,7 +34,7 @@ Marcierge::Application.routes.draw do
 
   #  Creators
   #-----------------------------------------------
-  resources :users, only: %w[index show] do
+  resources :creators, only: %w[index show] do
     resources :events, only: :index
   end
 

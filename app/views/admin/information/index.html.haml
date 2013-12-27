@@ -1,0 +1,22 @@
+
+%h1 お知らせ一覧
+
+= link_to '新規お知らせ', new_admin_information_path, class: 'button tiny'
+
+%table
+  %thead
+    %tr
+      %th タイトル
+      %th 公開状態
+      %th 編集
+  %tbody
+    - @information.each do |information|
+      %tr
+        %td
+          = link_to information.title, edit_admin_information_path(information)
+        %td
+          = information.status.text
+        %td
+          = link_to '編集', edit_admin_information_path(information), class: 'button tiny'
+          = link_to '削除', admin_information_path(information), class: 'button tiny', remote: true, method: :delete, confirm: '本当に削除しますか？'
+

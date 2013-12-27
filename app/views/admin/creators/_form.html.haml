@@ -1,0 +1,17 @@
+
+- if @creator.errors.any?
+  %ul
+    - @creator.errors.full_messages.each do |message|
+      %li= message
+
+
+= simple_form_for [:admin, @creator] do |f|
+
+  - if @creator.avatar.present?
+    %p= image_tag @creator.avatar.url, size: '48x48'
+
+  = f.input :name, label: '名前'
+  = f.input :profile, label: 'プロフィール'
+
+  = f.button :submit
+

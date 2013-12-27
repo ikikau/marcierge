@@ -1,0 +1,25 @@
+
+%h1 管理者一覧
+
+= link_to '管理者を登録', new_admin_admin_user_path, class: 'button tiny'
+
+%table
+  %thead
+    %tr
+      %th アバター
+      %th 名前
+      %th Email
+      %th 編集
+  %tbody
+    - @admins.each do |admin|
+      %tr
+        %td
+          = image_tag admin.avatar_url(22), size: '22x22'
+        %td
+          = link_to admin.name, edit_admin_admin_user_path(admin)
+        %td
+          = admin.email
+        %td
+          = link_to '編集', edit_admin_admin_user_path(admin), class: 'button tiny'
+          = link_to '削除', admin_admin_user_path(admin), class: 'button tiny', remote: true, method: :delete, confirm: '本当に削除しますか？'
+

@@ -5,7 +5,13 @@ class Feature < ActiveRecord::Base
 
   attr_accessible :content, :status, :title
 
-  enumerize :status, in: [:private, :public], default: :private
+  enumerize :status,
+    in: {
+      private: 0,
+      public: 1,
+    },
+    default: :private,
+    predicates: true
 
 
   #  Validations
