@@ -5,6 +5,9 @@
 @import "compass/css3/opacity";
 @import "compass/css3/transform";
 
+body {
+  font-size: 12px;
+}
 
 #main {
   padding: 15px;
@@ -23,5 +26,12 @@ table {
 
   &:after {
     display: none !important;
+  }
+}
+
+.form-duration-inline {
+  & > select {
+    display: inline-block;
+    width: 60px;
   }
 }

@@ -23,7 +23,7 @@ private
   #  Callback: Check if begin and end datetime is valid
   #-----------------------------------------------
   def valid_event_date?
-    unless begin_at < end_at
+    unless begin_at.to_i < end_at.to_i
       # TODO: change error message
       self.errors.add :end_at, 'invaild term'
       false

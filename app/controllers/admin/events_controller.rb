@@ -8,7 +8,7 @@ class Admin::EventsController < Admin::ApplicationController
 
   def new
     @event = Event.new params[:event]
-    @event.event_dates.build
+    2.times { @event.event_dates.build }
   end
 
   def create
@@ -25,7 +25,7 @@ class Admin::EventsController < Admin::ApplicationController
 
   def edit
     @event = Event.find params[:id]
-    5.times { @event.event_dates.build }
+    2.times { @event.event_dates.build }
   end
 
   def update
