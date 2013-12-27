@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   #  Validations
   #-----------------------------------------------
-  validates :creator, presence: true
+  # validates :creator, presence: true
 
 
   #  Devise

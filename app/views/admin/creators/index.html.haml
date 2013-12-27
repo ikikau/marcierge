@@ -24,7 +24,7 @@
           = link_to creator.name, edit_admin_creator_path(creator)
         %td
           - if creator.user.present?
-            = link_to "##{creator.user.id}", edit_admin_user_path(creator.id)
+            = link_to "##{creator.user.id}", edit_admin_user_path(creator.user.id)
           - else
             \-
         %td

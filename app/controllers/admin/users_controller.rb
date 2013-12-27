@@ -12,6 +12,7 @@ class Admin::UsersController < Admin::ApplicationController
 
   def create
     @user = User.new params[:user]
+    @user.confirm!
 
     if @user.save
       redirect_to edit_admin_user_path(@user),
