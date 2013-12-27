@@ -1,0 +1,7 @@
+
+ja:
+  enumerize:
+    status:
+      private: 非公開
+      public: 公開
+

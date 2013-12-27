@@ -9,10 +9,10 @@
 
   %p= image_tag @admin.avatar_url, size: '48x48'
 
-  = f.input :name, label: '名前'
-  = f.input :email, label: 'Email'
-  = f.input :password, label: 'パスワード'
-  = f.input :password_confirmation, label: 'パスワード (確認用)'
+  = f.input :name
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
 
   = f.button :submit
 

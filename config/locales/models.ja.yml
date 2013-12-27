@@ -1,0 +1,55 @@
+
+ja:
+  activerecord:
+    models:
+      admin_user: 管理者
+      creator: クリエータ
+      event: イベント
+      feature: 特集記事
+      information: お知らせ
+      tag: タグ
+      user: ユーザ
+
+    attributes:
+      admin_user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード (確認)
+
+      creator:
+        user: ユーザ
+        avator: アバター
+        name: 名前
+        profile: プロフィール
+
+      event_date:
+        begin_at: 開始日時
+        end_at: 終了日時
+
+      event:
+        title: タイトル
+        content: イベント概要
+        status: 公開状態
+        tag_list: タグ
+
+      feature:
+        title: タイトル
+        content: 本文
+        status: 公開状態
+
+      information:
+        title: タイトル
+        content: 本文
+        status: 公開状態
+
+      tag:
+        name: タグ
+
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード (確認)
+
+

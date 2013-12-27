@@ -7,11 +7,11 @@
 
 = simple_form_for [:admin, @event] do |f|
 
-  = f.association :creator, label: 'クリエータ'
-  = f.input :title, label: 'タイトル'
-  = f.input :status, as: :radio_buttons, label: '公開状態'
-  = f.input :content, label: 'イベント概要'
-  = f.input :tag_list, as: :check_boxes, label: 'タグ', collection: Tag.all, value_method: :name
+  = f.association :creator
+  = f.input :title
+  = f.input :status, as: :radio_buttons
+  = f.input :content
+  = f.input :tag_list, as: :check_boxes, collection: Tag.all, value_method: :name
 
   = f.button :submit
 

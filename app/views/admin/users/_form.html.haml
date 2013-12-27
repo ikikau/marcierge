@@ -10,9 +10,9 @@
   - if @user.creator.present?
     %p= link_to @user.creator.name, edit_admin_creator_path(@user.creator)
 
-  = f.input :email, label: 'Email'
-  = f.input :password, label: 'パスワード'
-  = f.input :password_confirmation, label: 'パスワード (確認用)'
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
 
   = f.button :submit
 
