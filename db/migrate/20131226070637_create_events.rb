@@ -8,5 +8,7 @@ class CreateEvents < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :events, :creator_id
   end
 end

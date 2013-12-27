@@ -7,12 +7,17 @@ class Creator < ActiveRecord::Base
   #-----------------------------------------------
   belongs_to :avatar, class_name: '::Medium'
   has_many :events, dependent: :destroy
-  has_one :user
+  belongs_to :user, dependent: :destroy
 
 
   #  Validations
   #-----------------------------------------------
   validates :name, presence: true
+
+
+  #  Scope
+  #-----------------------------------------------
+  scope :without_user, -> { where user_id: nil }
 
 
   #  Avatar

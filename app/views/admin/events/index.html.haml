@@ -7,6 +7,7 @@
   %thead
     %tr
       %th タイトル
+      %th クリエータ
       %th 公開状態
       %th 編集
   %tbody
@@ -14,6 +15,8 @@
       %tr
         %td
           = link_to event.title, edit_admin_event_path(event)
+        %td
+          = event.creator.name
         %td
           = event.status.text
         %td

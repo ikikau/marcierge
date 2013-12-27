@@ -7,6 +7,7 @@
 
 = simple_form_for [:admin, @event] do |f|
 
+  = f.association :creator, label: 'クリエータ'
   = f.input :title, label: 'タイトル'
   = f.input :status, as: :radio_buttons, label: '公開状態'
   = f.input :content, label: 'イベント概要'

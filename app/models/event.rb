@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
 
   extend Enumerize
 
-  attr_accessible :content, :user_id, :title
+  attr_accessible :content, :creator_id, :title, :status
 
   enumerize :status,
     in: {
@@ -19,13 +19,14 @@ class Event < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :locations, :themes
 
-  belongs_to :user
+  belongs_to :creator, dependent: :destroy
   has_many :event_dates, dependent: :destroy
 
 
   #  Validations
   #-----------------------------------------------
   validates :title, presence: true
+  validates :creator, presence: true
 
 
   #  Scope

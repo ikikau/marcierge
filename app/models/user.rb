@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   #  Associations
   #-----------------------------------------------
-  belongs_to :creator
+  has_one :creator
 
 
   #  Validations

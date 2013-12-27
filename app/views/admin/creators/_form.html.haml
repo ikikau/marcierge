@@ -10,6 +10,7 @@
   - if @creator.avatar.present?
     %p= image_tag @creator.avatar.url, size: '48x48'
 
+  = f.association :user, label: 'ユーザ'
   = f.input :name, label: '名前'
   = f.input :profile, label: 'プロフィール'
 
