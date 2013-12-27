@@ -26,7 +26,7 @@
           = user.email
         %td
           = link_to '編集', edit_admin_user_path(user), class: 'button tiny'
-          = link_to '削除', admin_user_path(user), class: 'button tiny', remote: true, method: :delete, confirm: '本当に削除しますか？'
+          = link_to '削除', admin_user_path(user), class: 'button tiny', method: :delete, confirm: '本当に削除しますか？'
 
 = paginate @users
 
