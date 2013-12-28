@@ -7,20 +7,31 @@
 
 = simple_form_for [:admin, @event] do |f|
 
+  = f.simple_fields_for :thumbnail do |e|
+    - if e.object.id.present?
+      = image_tag e.object.asset.url(:thumbnail)
+      = e.input :_destroy, label: '削除', as: :boolean
+    - else
+      = e.input :asset, as: :file, label: 'サムネイル'
+
   = f.association :creator
   = f.input :title
   = f.input :status, as: :radio_buttons
   = f.input :content
+
+  = f.association :prefecture
+  = f.association :area
+  = f.input :location
+
   = f.input :tag_list, as: :check_boxes, collection: Tag.all, value_method: :name
 
   = f.simple_fields_for :event_dates do |e|
     - this_year = Time.now.year
 
-    %lable
-      開催期間
-      &mdash;
-      削除
-      = e.check_box :_destroy
+    %lable 開催期間
+
+    - if e.object.id.present?
+      = e.input :_destroy, label: '削除', as: :boolean
 
     .form-duration-inline
       開始日時

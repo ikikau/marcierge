@@ -1,6 +1,7 @@
 class Creator < ActiveRecord::Base
 
-  attr_accessible :avatar_id, :name, :profile, :user_id
+  attr_accessible :avatar_id, :user_id
+  attr_accessible :name, :profile
 
 
   #  Associations

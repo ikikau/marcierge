@@ -47,14 +47,14 @@ private
   #  Callback: Rename file before save
   #-----------------------------------------------
   def rename_file
-    return unless image.queued_for_write.present?
+    return unless asset.queued_for_write.present?
 
-    path = image.queued_for_write[:original].path
+    path = asset.queued_for_write[:original].path
     ext = File.extname path
     basename = File.basename path, ext
     file_name = "#{Digest::MD5.hexdigest(basename + Time.now.to_i.to_s)}#{ext}"
 
-    image.instance_write :file_name, file_name
+    asset.instance_write :file_name, file_name
   end
 
 end

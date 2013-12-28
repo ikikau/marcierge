@@ -8,11 +8,12 @@ class Admin::EventsController < Admin::ApplicationController
 
   def new
     @event = Event.new params[:event]
-    2.times { @event.event_dates.build }
+    build_associated @event
   end
 
   def create
     @event = Event.new params[:event]
+    build_associated @event
 
     if @event.save
       redirect_to edit_admin_event_path(@event),
@@ -25,11 +26,12 @@ class Admin::EventsController < Admin::ApplicationController
 
   def edit
     @event = Event.find params[:id]
-    2.times { @event.event_dates.build }
+    build_associated @event
   end
 
   def update
     @event = Event.find params[:id]
+    build_associated @event
 
     if @event.update_attributes params[:event]
       redirect_to edit_admin_event_path(@event),
@@ -46,6 +48,16 @@ class Admin::EventsController < Admin::ApplicationController
 
     redirect_to admin_events_path,
       notice: 'イベントを削除しました'
+  end
+
+
+private
+
+
+  def build_associated(event, num_dates = 2)
+    event.build_thumbnail unless event.thumbnail.present?
+    num = [0, num_dates - event.event_dates.count - 1].max
+    num.times { event.event_dates.build }
   end
 
 end

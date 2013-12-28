@@ -17,6 +17,9 @@ class Feature < ActiveRecord::Base
   #  Validations
   #-----------------------------------------------
   validates :title, presence: true
+  validates :status,
+    presence: true,
+    inclusion: { in: %w[private public] }
 
 
   #  Scope

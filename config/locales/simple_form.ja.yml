@@ -28,6 +28,10 @@ ja:
         status: 公開状態
         tag_list: タグ
         creator: クリエータ
+        prefecture: 都道府県
+        location: 住所
+        area: エリア
+        event_dates: 開催期間
 
       feature:
         title: タイトル

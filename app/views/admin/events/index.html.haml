@@ -7,6 +7,8 @@
   %thead
     %tr
       %th タイトル
+      %th エリア
+      %th 都道府県
       %th クリエータ
       %th 公開状態
       %th 編集
@@ -15,6 +17,10 @@
       %tr
         %td
           = link_to event.title, edit_admin_event_path(event)
+        %td
+          = event.area.name
+        %td
+          = event.prefecture.name
         %td
           = event.creator.name
         %td
