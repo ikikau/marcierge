@@ -21,6 +21,12 @@ class EventDate < ActiveRecord::Base
   validate :validate_term!
 
 
+  #  Scopes
+  #-----------------------------------------------
+  scope :holiday, -> { where(holiday: true).group(:event_id) }
+  scope :weekday, -> { where(weekday: true).group(:event_id) }
+
+
   #  Callbacks
   #-----------------------------------------------
   after_validation :set_weekday_and_holiday_flag

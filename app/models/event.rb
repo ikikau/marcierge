@@ -15,7 +15,8 @@ class Event < ActiveRecord::Base
       public: 1,
     },
     default: :private,
-    predicates: true
+    predicates: true,
+    scope: true
 
 
   #  Associations
@@ -53,8 +54,11 @@ class Event < ActiveRecord::Base
 
   #  Scope
   #-----------------------------------------------
-  scope :private, -> { where status: :private }
-  scope :public, -> { where status: :public }
+  scope :public, -> { with_status :public }
+  scope :private, -> { with_status :private }
+
+  scope :holiday, -> { where id: EventDate.holiday.pluck(:event_id) }
+  scope :weekday, -> { where id: EventDate.weekday.pluck(:event_id) }
 
 
   #  Kaminari
