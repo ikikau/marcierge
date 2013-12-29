@@ -34,11 +34,9 @@
       = e.input :_destroy, label: '削除', as: :boolean
 
     .form-duration-inline
-      開始日時
-      = e.datetime_select :begin_at, minute_step: 10, include_blank: true, use_month_numbers: true, start_year: this_year
+      = e.input :begin_at, minute_step: 10, include_blank: true, use_month_numbers: true, start_year: this_year
     .form-duration-inline
-      終了日時
-      = e.datetime_select :end_at, minute_step: 10, include_blank: true, use_month_numbers: true, start_year: this_year
+      = e.input :end_at, minute_step: 10, include_blank: true, use_month_numbers: true, start_year: this_year
 
 
   = f.button :submit

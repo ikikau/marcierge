@@ -56,7 +56,7 @@ private
 
   def build_associated(event, num_dates = 2)
     event.build_thumbnail unless event.thumbnail.present?
-    num = [0, num_dates - event.event_dates.count - 1].max
+    num = [0, num_dates - event.event_dates.length].max
     num.times { event.event_dates.build }
   end
 

@@ -15,8 +15,8 @@ class EventDate < ActiveRecord::Base
   #-----------------------------------------------
   validates :event_id, presence: true
   validates :event, presence: true
-  validates :begin_at, presence: true, on: :create
-  validates :end_at, presence: true, on: :create
+  validates :begin_at, presence: true
+  validates :end_at, presence: true
 
   validate :validate_term!
 
@@ -47,6 +47,7 @@ private
   #  Callback: 期間が平日・休日を含んでいるか
   #-----------------------------------------------
   def set_weekday_and_holiday_flag
+    return unless begin_at.present? && end_at.present?
     wday = begin_at.wday
     duration = ((end_at.to_f - begin_at.to_f) / 1.day).floor
     self.weekday = (wday < 6)
