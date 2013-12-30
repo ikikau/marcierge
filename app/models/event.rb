@@ -28,6 +28,7 @@ class Event < ActiveRecord::Base
   belongs_to :prefecture, class_name: '::MasterPrefecture'
   belongs_to :area, class_name: '::MasterArea'
   has_many :event_dates, dependent: :destroy
+  has_many :gallery_media, as: :imageable
 
   accepts_nested_attributes_for :event_dates,
     allow_destroy: true,
