@@ -21,12 +21,13 @@ $ bundle exec rake db:seed
 ------------
 
 - [2013-12-27](https://www.dropbox.com/s/foeklm0ypms0ank/marcierge_development_2013-12-27.sql)
+- [2014-01-06](https://www.dropbox.com/s/rrdphkbbvd67ggq/marcierge_development_2014-01-06.sql)
 
 
 public/system
 -------------
 
-- まだない
+- [system.zip](https://www.dropbox.com/s/cgl9exzc0bpl21f/system.zip)
 
 
 開発用アカウント
