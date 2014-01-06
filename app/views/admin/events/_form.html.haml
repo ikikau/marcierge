@@ -28,7 +28,7 @@
   = f.simple_fields_for :event_dates do |e|
     - this_year = Time.now.year
 
-    %lable 開催期間
+    %label 開催期間
 
     - if e.object.id.present?
       = e.input :_destroy, label: '削除', as: :boolean
