@@ -1,0 +1,13 @@
+
+- if @tag.errors.any?
+  %ul
+    - @tag.errors.full_messages.each do |message|
+      %li= message
+
+
+= simple_form_for [:admin, @tag] do |f|
+
+  = f.input :name
+
+  = f.button :submit
+

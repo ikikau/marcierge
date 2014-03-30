@@ -1,0 +1,19 @@
+
+%h1 タグ一覧
+
+= link_to '新規タグ', new_admin_tag_path, class: 'button tiny'
+
+%table
+  %thead
+    %tr
+      %th タグ
+      %th 編集
+  %tbody
+    - @tags.each do |tag|
+      %tr
+        %td
+          = tag.name
+        %td
+          = link_to '編集', edit_admin_tag_path(tag), class: 'button tiny'
+          = link_to '削除', admin_tag_path(tag), class: 'button tiny', method: :delete, confirm: '本当に削除しますか？'
+
