@@ -4,26 +4,18 @@ class Event < ActiveRecord::Base
 
   extend Enumerize
 
-  attr_accessible :creator_id, :thumbnail_id, :prefecture_id, :area_id
   attr_accessible :title, :content, :status, :location
   attr_accessible :tag_list
   attr_accessible :event_dates_attributes, :thumbnail_attributes
 
-  enumerize :status,
-    in: {
-      private: 0,
-      public: 1,
-    },
-    default: :private,
-    predicates: true,
-    scope: true
+  enumerize :status, in: { private: 0, public: 1 }, default: :private, predicates: true, scope: true
 
 
   #  Associations
   #-----------------------------------------------
   acts_as_taggable
 
-  belongs_to :creator, dependent: :destroy
+  belongs_to :creators, class_name: '::CreatorJoinEvent', dependent: :destroy
   belongs_to :thumbnail, class_name: '::Medium', dependent: :destroy
   belongs_to :prefecture, class_name: '::MasterPrefecture'
   belongs_to :area, class_name: '::MasterArea'

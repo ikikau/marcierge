@@ -7,7 +7,8 @@ class Creator < ActiveRecord::Base
   #  Associations
   #-----------------------------------------------
   belongs_to :avatar, class_name: '::Medium'
-  has_many :events, dependent: :destroy
+  has_many :join_events, class_name: '::CreatorJoinEvent', dependent: :destroy
+  has_many :events, through: :join_events, foreign_key: :event_id
   belongs_to :user, dependent: :destroy
 
 

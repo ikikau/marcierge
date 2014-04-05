@@ -124,13 +124,12 @@ GEM
     polyglot (0.3.3)
     powder (0.1.8)
       thor (>= 0.11.5)
-    pry (0.9.12.4)
+    pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
-    pry-remote (0.1.7)
-      pry (~> 0.9)
-      slop (~> 3.0)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -173,7 +172,7 @@ GEM
     simple_form (2.1.1)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    slop (3.4.7)
+    slop (3.5.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -222,7 +221,7 @@ DEPENDENCIES
   oj
   paperclip
   powder (~> 0.1.8)
-  pry-remote
+  pry-rails
   rails (= 3.2.13)
   rails-erd
   redcarpet

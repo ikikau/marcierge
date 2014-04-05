@@ -3,20 +3,22 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'mysql2'
 
-gem 'figaro'
-gem 'kaminari'
-gem 'paperclip'
-gem 'enumerize'
-gem 'devise'
-gem 'oj'
-gem 'strong_parameters'
-gem 'acts-as-taggable-on'
-gem 'redcarpet'
-gem 'delayed_job_active_record'
-gem 'daemons'
+
 gem 'active_model_serializers'
-gem 'simple_form'
+gem 'acts-as-taggable-on'
+gem 'devise'
+gem 'daemons'
+gem 'delayed_job_active_record'
+gem 'enumerize'
+gem 'figaro'
 gem 'foundation-rails'
+gem 'kaminari'
+gem 'oj'
+gem 'paperclip'
+gem 'redcarpet'
+gem 'strong_parameters'
+gem 'simple_form'
+
 
 
 group :assets do
@@ -30,7 +32,7 @@ end
 
 group :development do
   gem 'powder', '~> 0.1.8'
-  gem 'pry-remote'
+  gem 'pry-rails'
   gem 'meta_request'
   gem 'better_errors'
   gem 'binding_of_caller'
