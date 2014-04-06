@@ -18,6 +18,7 @@ gem 'paperclip'
 gem 'redcarpet'
 gem 'strong_parameters'
 gem 'simple_form'
+gem 'unicorn'
 
 
 
