@@ -31,12 +31,14 @@ test:
   password:
   socket: /tmp/mysql.sock
 
+
+
 production:
   adapter: mysql2
   encoding: utf8
-  reconnect: false
+  host: 127.0.0.1
+  reconnect: true
   database: marcierge_production
   pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+  username: marcierge_p
+  password: vqCojp7Pv4GNwQgP5ZJzHk
