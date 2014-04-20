@@ -15,6 +15,7 @@ gem 'kaminari'
 gem 'oj'
 gem 'paperclip'
 gem 'redcarpet'
+gem 'ransack'
 gem 'strong_parameters'
 gem 'simple_form'
 gem 'unicorn'
@@ -32,10 +33,10 @@ group :assets do
 end
 
 group :development do
-  gem 'capistrano', '~> 3.1'
-  gem 'capistrano-rvm'
-  gem 'capistrano-rails'
-  gem 'capistrano-unicorn', :require => false
+  gem 'capistrano', '~> 2.14.1'
+  gem 'capistrano-ext', '~> 1.2.1'
+  gem 'capistrano-switchuser', '~> 0.0.1'
+  # gem 'rvm-capistrano', '~> 1.2.7'
   gem 'powder', '~> 0.1.8'
   gem 'pry-rails'
   gem 'meta_request'

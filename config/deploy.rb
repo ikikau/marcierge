@@ -1,64 +1,42 @@
-# config valid only for Capistrano 3.1
-lock '3.1.0'
+# require 'pry'
+# require "bundler/capistrano"
+require "capistrano/ext/multistage"
+require 'capistrano/switchuser'
+# require "rvm/capistrano"
+# require 'whenever/capistrano'
 
 
 set :application, 'marcierge'
-set :repo_url, 'git@github.com:creasty/marcierge.git'
-set :deploy_to, '/home/webapp/project/marcierge.com/'
-set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+set :repository,  'git@github.com:creasty/marcierge.git'
 
-set :rvm_type,         :system                            # Defaults to: :auto
-set :rvm_ruby_version, 'ruby-1.9.3-p545' # Defaults to: 'default'
+set :scm, :git
 
-# Default branch is :master
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+set :deploy_to, '~/project/marcierge.com/'
+set :use_sudo, false
 
-# Default deploy_to directory is /var/www/my_app
-# set :deploy_to, '/var/www/my_app'
+set :rvm_ruby_string, '1.9.3@marcierge'
+set :rvm_type, :user
+set :normalize_asset_timestamps, false
 
-# Default value for :scm is :git
-# set :scm, :git
-
-# Default value for :format is :pretty
-# set :format, :pretty
-
-# Default value for :log_level is :debug
-# set :log_level, :debug
-
-# Default value for :pty is false
-# set :pty, true
-
-# Default value for :linked_files is []
-# set :linked_files, %w{config/database.yml}
-
-# Default value for linked_dirs is []
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-
-# Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
-# Default value for keep_releases is 5
-# set :keep_releases, 5
 
 namespace :deploy do
+  # task :symlink_contents do
+  #   %w[.htaccess].each do |name|
+  #     run "ln -nfs #{deploy_to}/htdocs/#{name} #{release_path}/public/#{name}"
+  #   end
+  # end
 
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
-    end
+  task :start, :roles => :app do
+    run "touch #{current_release}/tmp/restart.txt"
   end
 
-  after :publishing, :restart
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "touch #{current_release}/tmp/restart.txt"
   end
-
 end
+
+
+
+after 'deploy', 'deploy:migrate'
+after 'deploy', 'deploy:cleanup'
+after 'deploy:create_symlink', 'deploy:symlink_contents'
