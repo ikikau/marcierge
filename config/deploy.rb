@@ -1,10 +1,11 @@
 # config valid only for Capistrano 3.1
 lock '3.2.0'
-require 'capistrano-unicorn'
+
 
 set :application, 'marcierge'
 set :repo_url, 'git@github.com:creasty/marcierge.git'
 set :deploy_to, '/home/webapp/project/marcierge.com/'
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 
 
 set :rvm_type,         :system                            # Defaults to: :auto
@@ -45,7 +46,6 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute unicorn:reload
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
     end
