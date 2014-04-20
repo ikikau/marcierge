@@ -1,7 +1,4 @@
 # require 'pry'
-# require "bundler/capistrano"
-require "capistrano/ext/multistage"
-require 'capistrano/switchuser'
 # require "rvm/capistrano"
 # require 'whenever/capistrano'
 
@@ -17,6 +14,11 @@ set :use_sudo, false
 set :rvm_ruby_string, '1.9.3@marcierge'
 set :rvm_type, :user
 set :normalize_asset_timestamps, false
+
+set :rake, lambda { "#{fetch(:bundle_cmd, "bundle")} exec rake" }
+
+
+set :bundle_without,  [:production, :staging]
 
 
 namespace :deploy do
@@ -34,8 +36,6 @@ namespace :deploy do
     run "touch #{current_release}/tmp/restart.txt"
   end
 end
-
-
 
 after 'deploy', 'deploy:migrate'
 after 'deploy', 'deploy:cleanup'
