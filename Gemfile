@@ -35,6 +35,7 @@ end
 group :development do
   gem 'capistrano', '~> 3.2.0'
   gem 'capistrano-rails'
+  gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-bundler'
   gem 'capistrano-unicorn', :require => false
