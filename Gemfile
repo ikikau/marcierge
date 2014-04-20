@@ -23,6 +23,8 @@ gem 'unicorn'
 
 
 group :assets do
+  gem 'execjs'
+  gem 'therubyracer'
   gem 'sass-rails', '~> 3.2.3'
   gem 'compass-rails'
   gem 'coffee-rails', '~> 3.2.1'
