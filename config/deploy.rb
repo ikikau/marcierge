@@ -5,7 +5,7 @@ lock '3.2.0'
 set :application, 'marcierge'
 set :repo_url, 'git@github.com:creasty/marcierge.git'
 set :deploy_to, '/home/webapp/project/marcierge.com/'
-set :default_env, { rvm_bin_path: '/home/webapp/.rvm/bin' }
+set :rvm_bin_path, '/home/webapp/.rvm/bin'
 
 
 
