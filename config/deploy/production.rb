@@ -16,6 +16,10 @@ set :deploy_to, '/home/webapp/project/marcierge.com/'
 
 server 'marcierge_webapp', user: 'webapp', roles: %w{web app}, roles: %w(app db)
 
+# SSHKit.config.command_map[:rvm] = "~/.rvm/bin/rvm"
+# SSHKit.config.command_map[:bundle] = "~/.rvm/gems/ruby-1.9.3-p545@global/bin/bundle"
+# SSHKit.config.command_map[:ruby_executable_hooks] = "~/.rvm/gems/ruby-1.9.3-p545@marcierge/bin/ruby_executable_hooks"
+
 set :branch, 'master'
 
 set :ssh_options, {

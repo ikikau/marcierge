@@ -3,8 +3,8 @@ timeout 15 #15秒Railsが反応しなければWorkerをkillしてタイムアウ
 preload_app true #後述
 
 # 同一マシンでNginxとプロキシ組むならsocketのが高速ぽい(後述ベンチ)
-listen ENV['RAILS_ROOT'] + 'tmp/pids/unicorn.sock'
-# listen 3000
+# listen ENV['RAILS_ROOT'] + 'tmp/pids/unicorn.sock'
+listen 3000
 
 # pid file path Capistranoとか使う時は要設定か
 # pid /path/to/rails/tmp/pids/unicorn.pid

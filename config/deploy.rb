@@ -1,17 +1,14 @@
 # config valid only for Capistrano 3.1
-lock '3.2.0'
+lock '3.1.0'
 
 
 set :application, 'marcierge'
 set :repo_url, 'git@github.com:creasty/marcierge.git'
 set :deploy_to, '/home/webapp/project/marcierge.com/'
-set :rvm_bin_path, '/home/webapp/.rvm/bin'
-
-
-
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 
 set :rvm_type,         :system                            # Defaults to: :auto
-set :rvm_ruby_version, 'ruby-1.9.3-p545@marcierge' # Defaults to: 'default'
+set :rvm_ruby_version, 'ruby-1.9.3-p545' # Defaults to: 'default'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
