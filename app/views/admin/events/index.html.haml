@@ -1,30 +1,33 @@
+.container
 
-%h1 イベント一覧
+  .row
+    .col-md-10
+      %h1 イベント一覧
+    .col-md-2
+      = link_to '新規イベント', new_admin_event_path, class: 'btn btn-info'
 
-= link_to '新規イベント', new_admin_event_path, class: 'button tiny'
-
-%table
-  %thead
-    %tr
-      %th タイトル
-      %th エリア
-      %th 都道府県
-      %th 公開状態
-      %th 編集
-  %tbody
-    - @events.each do |event|
+  %table.table.table-striped.table-bordered
+    %thead
       %tr
-        %td
-          = link_to event.title, edit_admin_event_path(event)
-        %td
-          = event.area.name
-        %td
-          = event.prefecture.name
-        %td
-          = event.status.text
-        %td
-          = link_to '編集', edit_admin_event_path(event), class: 'button tiny'
-          = link_to '削除', admin_event_path(event), class: 'button tiny', method: :delete, confirm: '本当に削除しますか？'
+        %th タイトル
+        %th エリア
+        %th 都道府県
+        %th 公開状態
+        %th 編集
+    %tbody
+      - @events.each do |event|
+        %tr
+          %td
+            = link_to event.title, edit_admin_event_path(event)
+          %td
+            = event.area.name
+          %td
+            = event.prefecture.name
+          %td
+            = event.status.text
+          %td
+            = link_to '編集', edit_admin_event_path(event), class: 'button tiny'
+            = link_to '削除', admin_event_path(event), class: 'button tiny', method: :delete, confirm: '本当に削除しますか？'
 
-= paginate @events
+  = paginate @events
 
