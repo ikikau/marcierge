@@ -1,5 +1,5 @@
-#= require lib/jquery.min
-#= require jquery_ujs
-#= require bootstrap
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap
 
 
