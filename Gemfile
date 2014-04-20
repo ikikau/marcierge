@@ -19,20 +19,19 @@ gem 'ransack'
 gem 'strong_parameters'
 gem 'simple_form'
 gem 'unicorn'
+gem 'executable-hooks'
 
 
+gem 'execjs'
+gem 'therubyracer'
+gem 'sass-rails', '~> 3.2.3'
+gem 'compass-rails'
+gem 'coffee-rails', '~> 3.2.1'
+gem 'jquery-rails'
+gem 'haml-rails'
+gem 'uglifier', '>= 1.0.3'
+gem 'bootstrap-sass', '~> 3.1.1.1'
 
-group :assets do
-  gem 'execjs'
-  gem 'therubyracer'
-  gem 'sass-rails', '~> 3.2.3'
-  gem 'compass-rails'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'jquery-rails'
-  gem 'haml-rails'
-  gem 'uglifier', '>= 1.0.3'
-  gem 'bootstrap-sass', '~> 3.1.1.1'
-end
 
 group :development do
   gem 'capistrano', '~> 2.14.1'

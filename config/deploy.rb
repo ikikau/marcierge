@@ -39,4 +39,4 @@ end
 
 after 'deploy', 'deploy:migrate'
 after 'deploy', 'deploy:cleanup'
-after 'deploy:create_symlink', 'deploy:symlink_contents'
+# after 'deploy:create_symlink', 'deploy:symlink_contents'
