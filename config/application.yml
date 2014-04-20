@@ -1,8 +1,15 @@
 
 development:
 
-  APP_DOMAIN: 'marcierge.jp'
-  MAIL_NOREPLY: 'no-reply@marcierge.jp'
+  APP_DOMAIN: 'marcierge.com'
+  MAIL_NOREPLY: 'no-reply@marcierge.com'
+  RAILS_ROOT:
 
   RESERVED_WORDS: 'master webmaster admin admins administrator'
+
+
+production:
+  APP_DOMAIN: 'marcierge.com'
+  MAIL_NOREPLY: 'no-reply@marcierge.com'
+  RAILS_ROOT: '/home/webapp/project/current/'
 
