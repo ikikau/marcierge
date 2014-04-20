@@ -54,7 +54,7 @@ class Admin::EventsController < Admin::ApplicationController
 private
 
 
-  def build_associated(event, num_dates = 2)
+  def build_associated(event, num_dates = 1)
     event.build_thumbnail unless event.thumbnail.present?
     num = [0, num_dates - event.event_dates.length].max
     num.times { event.event_dates.build }

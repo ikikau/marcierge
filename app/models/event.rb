@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
   attr_accessible :title, :content, :status, :location
   attr_accessible :tag_list
   attr_accessible :event_dates_attributes, :thumbnail_attributes
+  attr_accessible :prefecture_id, :area_id
 
   enumerize :status, in: { private: 0, public: 1 }, default: :private, predicates: true, scope: true
 
@@ -33,16 +34,12 @@ class Event < ActiveRecord::Base
   #  Validations
   #-----------------------------------------------
   validates :title, presence: true
-  validates :creator, presence: true
   validates :status,
     presence: true,
     inclusion: { in: %w[private public] }
-  validates :prefecture_id, presence: true
   validates :prefecture, presence: true
-  validates :area_id, presence: true
   validates :area, presence: true
   validates :location, presence: true
-  validates :event_dates, presence: true
 
 
   #  Scope
