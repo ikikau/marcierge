@@ -29,6 +29,7 @@ ja:
 
       event:
         title: タイトル
+        lead: リード文
         content: イベント概要
         status: 公開状態
         tag_list: タグ
