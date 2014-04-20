@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
 
   extend Enumerize
 
-  attr_accessible :title, :content, :status, :location
+  attr_accessible :title, :content, :status, :location, :lead
   attr_accessible :tag_list
   attr_accessible :event_dates_attributes, :thumbnail_attributes
   attr_accessible :prefecture_id, :area_id

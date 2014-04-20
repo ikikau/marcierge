@@ -37,7 +37,8 @@ group :development do
   gem 'capistrano', '~> 2.14.1'
   gem 'capistrano-ext', '~> 1.2.1'
   gem 'capistrano-switchuser', '~> 0.0.1'
-  # gem 'rvm-capistrano', '~> 1.2.7'
+  gem 'rvm-capistrano', '~> 1.2.7'
+  gem 'capistrano-unicorn', :require => false
   gem 'powder', '~> 0.1.8'
   gem 'pry-rails'
   gem 'meta_request'
