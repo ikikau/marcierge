@@ -63,5 +63,5 @@ after 'deploy', 'deploy:migrate'
 after 'deploy', 'deploy:cleanup'
 after 'deploy:create_symlink', 'deploy:symlink_contents'
 # after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
-# after 'deploy:restart', 'unicorn:restart'   # app preloaded
-after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime deployments)
+after 'deploy:restart', 'unicorn:restart'   # app preloaded
+# after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime deployments)
