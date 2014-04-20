@@ -3,37 +3,38 @@
     .navbar-header
       = link_to 'Marcierge Admin', admin_root_path, class: "navbar-brand"
 
-    .collapse.navbar-collapse{ id: "bs-example-navbar-collapse-1" }
-      %ul.nav.navbar-nav
+    - if admin_user_signed_in?
+      .collapse.navbar-collapse{ id: "bs-example-navbar-collapse-1" }
+        %ul.nav.navbar-nav
 
-        %li.dropdown{ class: controller_name == 'events' && 'active' }
-          = link_to 'イベント', admin_events_path
+          %li.dropdown{ class: controller_name == 'events' && 'active' }
+            = link_to 'イベント', admin_events_path
 
-        %li{ class: controller_name == 'tags' && 'active' }
-          = link_to 'イベントタグ', admin_tags_path
+          %li{ class: controller_name == 'tags' && 'active' }
+            = link_to 'イベントタグ', admin_tags_path
 
-        %li{ class: controller_name == 'creators' && 'active' }
-          = link_to 'クリエータ', admin_creators_path
+          %li{ class: controller_name == 'creators' && 'active' }
+            = link_to 'クリエータ', admin_creators_path
 
-        %li{ class: controller_name == 'users' && 'active' }
-          = link_to 'ユーザ', admin_users_path
+          %li{ class: controller_name == 'users' && 'active' }
+            = link_to 'ユーザ', admin_users_path
 
-        %li{ class: controller_name == 'features' && 'active' }
-          = link_to '特集記事', admin_features_path
+          %li{ class: controller_name == 'features' && 'active' }
+            = link_to '特集記事', admin_features_path
 
-        %li{ class: controller_name == 'information' && 'active' }
-          = link_to 'お知らせ', admin_information_index_path
+          %li{ class: controller_name == 'information' && 'active' }
+            = link_to 'お知らせ', admin_information_index_path
 
-        %li{ class: controller_name == 'admin_users' && 'active' }
-          = link_to '管理者', admin_admin_users_path
+          %li{ class: controller_name == 'admin_users' && 'active' }
+            = link_to '管理者', admin_admin_users_path
 
-      %ul.nav.navbar-nav.navbar-right
-        %li
-          = link_to '#', class: "dropdown-toggle", data: { toggle: "dropdown" } do
-            = image_tag current_admin_user.avatar_url(22), size: '22x22'
-            &nbsp;
-            = current_admin_user.name
-            %strong.caret
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to '#', class: "dropdown-toggle", data: { toggle: "dropdown" } do
+              = image_tag current_admin_user.avatar_url(22), size: '22x22'
+              &nbsp;
+              = current_admin_user.name
+              %strong.caret
 
-          %ul.dropdown-menu
-            %li= link_to 'ログアウト', destroy_admin_user_session_path
+            %ul.dropdown-menu
+              %li= link_to 'ログアウト', destroy_admin_user_session_path
