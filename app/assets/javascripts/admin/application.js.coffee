@@ -1,8 +1,5 @@
 #= require lib/jquery.min
 #= require jquery_ujs
-#= require foundation
+#= require bootstrap
 
-
-$ ->
-  $(document).foundation()
 

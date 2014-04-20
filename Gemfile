@@ -11,7 +11,7 @@ gem 'daemons'
 gem 'delayed_job_active_record'
 gem 'enumerize'
 gem 'figaro'
-gem 'foundation-rails'
+# gem 'foundation-rails'
 gem 'kaminari'
 gem 'oj'
 gem 'paperclip'
@@ -29,6 +29,7 @@ group :assets do
   gem 'jquery-rails'
   gem 'haml-rails'
   gem 'uglifier', '>= 1.0.3'
+  gem 'bootstrap-sass', '~> 3.1.1.1'
 end
 
 group :development do
