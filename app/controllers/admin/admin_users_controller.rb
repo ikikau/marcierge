@@ -7,15 +7,14 @@ class Admin::AdminUsersController < Admin::ApplicationController
   end
 
   def new
-    @admin = AdminUser.new params[:admin]
+    @admin = AdminUser.new params[:admin_user]
   end
 
   def create
-    @admin = AdminUser.new params[:admin]
+    @admin = AdminUser.new params[:admin_user]
 
     if @admin.save
-      redirect_to edit_admin_admin_user_path(@admin),
-        notice: '管理者が作成されました'
+      redirect_to admin_admin_users_path, notice: '管理者が作成されました'
     else
       flash.now[:alert] = '管理者の作成に失敗しました'
       render :new
@@ -29,7 +28,7 @@ class Admin::AdminUsersController < Admin::ApplicationController
   def update
     @admin = AdminUser.find params[:id]
 
-    if @admin.update_attributes params[:admin]
+    if @admin.update_attributes params[:admin_user]
       redirect_to edit_admin_admin_user_path(@admin),
         notice: '管理者が更新されました'
     else
