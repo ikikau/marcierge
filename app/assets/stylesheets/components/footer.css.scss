@@ -6,6 +6,10 @@
   .pagetop {
     position: absolute;
     margin: -181px 0 0 734px;
+
+    a:hover {
+      opacity: $opacity-hover;
+    }
   }
 
   .link {
