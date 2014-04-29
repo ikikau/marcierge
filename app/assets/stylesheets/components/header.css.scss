@@ -25,6 +25,8 @@
         &:first-child {
           margin-right: 16px;
         }
+
+        a:hover { opacity: 0.7; }
       }
     }
 
@@ -38,6 +40,8 @@
         &:first-child {
           margin-right: 5px;
         }
+
+        a:hover { opacity: 0.8; }
       }
     }
   }
@@ -61,6 +65,10 @@
         a {
           display: block;
           padding: 21px 0;
+
+          &:hover {
+            opacity: 0.7;
+          }
 
           img {
             display: block;
