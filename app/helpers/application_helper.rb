@@ -1,8 +1,10 @@
+# encoding: utf-8
+
 module ApplicationHelper
 
   def default_meta_tags
   {
-    :title       => 'Marcierge',
+    :title       => 'ちょっとした週末の贅沢をお届け。 | marcierge',
     # :description => 'Member login page.',
     # :keywords    => 'Site, Login, Members',
     # :separator   => "&mdash;".html_safe,
