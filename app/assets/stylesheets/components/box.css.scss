@@ -53,16 +53,19 @@
         &.entry_title {
           height: 34px;
           margin: 14px 0;
+          color: #333333;
           font-size: 14px;
           font-weight: bold;
         }
 
         &.entry_desc {
           height: 73px;
+          color: #83858c;
         }
 
         &.entry_date {
           margin: 5px 0;
+          color: #83858c;
         }
 
       }
@@ -75,9 +78,11 @@
           margin-right: 3px;
           display: inline;
           padding: 5px;
+          color: #62646b;
           background: #cdc9c6;
-          @include border-radius(5px);
+          @include border-radius(8px, 8px);
         }
+
       }
 
     }/* .entry */
