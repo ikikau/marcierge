@@ -1,0 +1,94 @@
+.box {
+  margin-bottom: 20px;
+  padding-top: 22px;
+  background: image-url('common/bdr_section.png') no-repeat top left;
+  line-height: 18px;
+
+  .inner {
+    background: #fff image-url('common/bg_section.png') no-repeat top left;
+  }
+
+  .title {
+    padding: 24px 20px 26px 20px;
+
+    h2 {
+      margin-left: 2px;
+    }
+
+    &.has-more {
+      @include clearfix;
+
+      h2 {
+        float: left;
+      }
+
+      .more {
+        margin-top: 2px;
+        float: right;
+
+        a:hover {
+          opacity: 0.6;
+        }
+      }
+
+    }/* has-more */
+
+  }/* .title */
+
+  .colum_three {
+    @include clearfix;
+
+    .entry {
+      width: 190px;
+      float: left;
+      margin-left: 20px;
+
+      .new {
+        position: absolute;
+        margin-top: -6px;
+        margin-left: 157px;
+      }
+
+      p {
+        &.entry_title {
+          height: 34px;
+          margin: 14px 0;
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        &.entry_desc {
+          height: 73px;
+        }
+
+        &.entry_date {
+          margin: 5px 0;
+        }
+
+      }
+
+      ul.tag {
+        @include clearfix;
+        margin-top: 15px;
+
+        li {
+          margin-right: 3px;
+          display: inline;
+          padding: 5px;
+          background: #cdc9c6;
+          @include border-radius(5px);
+        }
+      }
+
+    }/* .entry */
+
+  }/* .colum_three */
+
+}
+
+
+#pickup.box {
+  .inner {
+    padding-bottom: 30px;
+  }
+}

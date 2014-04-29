@@ -1,19 +1,50 @@
 
 #pages.home {
 
-  #near_event {
+  #main {
     width: 650px;
-    background: #fff;
-    padding: 20px 0;
 
-    .title {
-      position: absolute;
-      margin: -23px 0 0 -38px;
-    }
+    #near_event {
+      margin-bottom: 20px;
+      padding: 20px 0;
+      background: #fff;
 
-    .body {
-      width: 610px;
-      margin: 0 auto;
-    }
-  }
+      .title {
+        position: absolute;
+        margin: -23px 0 0 -38px;
+      }
+
+      .body {
+        width: 610px;
+        margin: 0 auto;
+      }
+
+    }/* #near_event */
+
+
+    #atoz {
+      padding-top: 20px;
+      background: image-url('common/bdr_section.png') no-repeat top left;
+
+      .body {
+        height: 323px;
+        background: image-url('components/atoz/bg_atoz.png') no-repeat bottom left;
+      }
+
+      a {
+        display: block;
+        width: 628px;
+        height: 300px;
+        margin: 5px 0 0 10px;
+
+        &:hover { opacity: 0.8; }
+
+        img {
+          margin-top: 194px;
+          margin-left: 182px;
+        }
+      }
+    }/* #atoz */
+
+  }/* #main */
 }

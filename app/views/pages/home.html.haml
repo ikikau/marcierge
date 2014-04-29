@@ -1,6 +1,7 @@
 
-- content_for :overlay do
-  = image_tag 'https://dl.dropboxusercontent.com/s/7ie6mdjjwiyk1p9/toppage_slice_02.jpg?dl=1&token_hash=AAG8wXrcCO1PlM6VY3xdiePdrqebVu0zaEJtxEkRP_bIJg'
+/ content_for :overlay do
+/  = image_tag 'https://dl.dropboxusercontent.com/s/7ie6mdjjwiyk1p9/toppage_slice_02.jpg?dl=1&token_hash=AAG8wXrcCO1PlM6VY3xdiePdrqebVu0zaEJtxEkRP_bIJg'
+
 
 #near_event
 
@@ -16,21 +17,32 @@
       %li= image_tag 'http://placehold.it/610x310.png'
       %li= image_tag 'http://placehold.it/610x310.png'
 
-    =link_to 'next', '#'
-    =link_to 'prev', '#'
+    .control
+      =link_to image_tag('views/pages/home/btn_back.png', size: '75×22', alt: 'back'), '#', class: 'btn_back'
+
+      %ul.progress
+        %li= image_tag 'views/pages/home/img_cal_on.png', size: '12×11', alt: '●'
+        %li= image_tag 'views/pages/home/img_cal_off.png', size: '12×11', alt: '●'
+        %li= image_tag 'views/pages/home/img_cal_off.png', size: '12×11', alt: '●'
+        %li= image_tag 'views/pages/home/img_cal_off.png', size: '12×11', alt: '●'
+        %li= image_tag 'views/pages/home/img_cal_off.png', size: '12×11', alt: '●'
+
+      =link_to image_tag('views/pages/home/btn_next.png', size: '82×22', alt: 'next'), '#', class: 'btn_next'
 
 
 #pickup.box
 
-  .title.has-more
-    %h2 ピックアップイベント
-    .more
-      = image_tag 'http://placehold.it/190x30.png', alt: 'more'
+  .inner
 
-  .body
+    .title.has-more
+      %h2= image_tag 'components/pickup/h_title.png', size: '256×42', alt: 'Pickup Event ピックアップイベント'
 
-    .row
+      .more
+        = link_to image_tag('components/pickup/btn_more.png', size: '190×32', alt: '全てのピックアップを見る'), '#'
+
+    .colum_three
       .entry
+        = image_tag 'common/icon_new.png', size: '44×44', alt: 'NEW', class: 'new'
         = image_tag 'http://placehold.it/190x151.png'
         %p.entry_title 旅するもみじ市 in 京都
         %p.entry_desc イラストレーター、陶芸家、料理家、カフェなど、「カラフル」というテーマのもとに集まり青空の下 、マーケットを開催します。
@@ -57,16 +69,28 @@
           %li 買う
 
 
-#feature
+#feature.box
 
-  .title.has-more
-    %h2 特集
-    .more
-      = image_tag 'http://placehold.it/190x30.png', alt: 'more'
+  .inner
 
-  .body
+    .title.has-more
+      %h2= image_tag 'components/feature/h_title.png', size: '111×52', alt: 'Feature 特集'
 
-    .row
+      .more
+        = link_to image_tag('components/feature/btn_more.png', size: '190×32', alt: '全ての特集を見る'), '#'
+
+    .colum_three
+
+      .entry
+        = image_tag 'http://placehold.it/190x151.png'
+        %p.entry_title 旅するもみじ市 in 京都
+        %p.entry_desc テキストが入りますテキストが入ります
+
+      .entry
+        = image_tag 'http://placehold.it/190x151.png'
+        %p.entry_title 旅するもみじ市 in 京都
+        %p.entry_desc テキストが入りますテキストが入ります
+
       .entry
         = image_tag 'http://placehold.it/190x151.png'
         %p.entry_title 旅するもみじ市 in 京都
@@ -76,4 +100,4 @@
 #atoz
 
   .body
-    = image_tag 'http://placehold.it/280x44.png', alt: 'ショップ・クリエイターをチェック'
+    = link_to image_tag('components/atoz/btn_atoz_check.png', alt: 'ショップ・クリエイターをチェック'), '#'

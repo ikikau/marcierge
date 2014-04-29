@@ -1,11 +1,46 @@
 
 .carrousel {
-  background: #000;
   li {
     display: none;
 
     &:first-child {
       display: block;
     }
+  }
+
+  +.control {
+    @include clearfix;
+    position: relative;
+    margin: 13px auto 2px auto;
+
+    .btn_back {
+      position: absolute;
+      top: 2px;
+      height: 22px;
+    }
+
+    .btn_next {
+      position: absolute;
+      height: 22px;
+      top: 2px;
+      right: 0;
+    }
+
+    .progress {
+      @include clearfix;
+      height: 22px;
+      width: 104px;
+      margin: 0 auto;
+
+      li {
+        float: left;
+        margin-left: 11px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
   }
 }
