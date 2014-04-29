@@ -1,15 +1,15 @@
 
-/- content_for :overlay do
-/  = image_tag 'https://dl.dropboxusercontent.com/s/7ie6mdjjwiyk1p9/toppage_slice_02.jpg?dl=1&token_hash=AAG8wXrcCO1PlM6VY3xdiePdrqebVu0zaEJtxEkRP_bIJg'
+- content_for :overlay do
+  = image_tag 'https://dl.dropboxusercontent.com/s/7ie6mdjjwiyk1p9/toppage_slice_02.jpg?dl=1&token_hash=AAG8wXrcCO1PlM6VY3xdiePdrqebVu0zaEJtxEkRP_bIJg'
 
 #near_event
 
   .title
-    %h2 もうすぐ開催のイベント
+    %h2= image_tag 'views/pages/home/h_near_event.png', size: '236×68', alt: 'もうすぐ開催のイベント'
 
   .body
 
-    %ul
+    %ul.carrousel
       %li= image_tag 'http://placehold.it/610x310.png'
       %li= image_tag 'http://placehold.it/610x310.png'
       %li= image_tag 'http://placehold.it/610x310.png'
@@ -20,7 +20,7 @@
     =link_to 'prev', '#'
 
 
-#pickup
+#pickup.box
 
   .title.has-more
     %h2 ピックアップイベント

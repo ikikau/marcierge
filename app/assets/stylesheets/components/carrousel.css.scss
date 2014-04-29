@@ -1,0 +1,11 @@
+
+.carrousel {
+  background: #000;
+  li {
+    display: none;
+
+    &:first-child {
+      display: block;
+    }
+  }
+}
