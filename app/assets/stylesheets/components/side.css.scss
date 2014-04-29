@@ -1,4 +1,122 @@
 
 #side {
-  
+
+  .feed {
+    margin: 17px 0;
+
+    .middle {
+      background: image-url('components/side/bg_event_middle.png') repeat-y;
+
+      .title {
+        margin: 0 auto;
+      }
+
+      .body {
+        width: 239px;
+        margin: 0 auto;
+        padding-bottom: 9px;
+
+        ul {
+          margin: 17px 0;
+          background: image-url('components/side/bdr_feed.png') bottom left no-repeat;
+
+          li {
+            padding: 15px 0;
+            background: image-url('components/side/bdr_feed.png') top left no-repeat;
+
+            .date {
+              color: #d8af17;
+              font-size: 10px;
+            }
+
+            .desc {
+              color: #83858c;
+              font-size: 11px;
+            }
+
+          }/* li */
+        }
+      }/* .body */
+
+      .more {
+        margin: 0 auto;
+        width: 190px;
+
+        a:hover {
+          opacity: $opacity-hover;
+        }
+      }
+    }
+
+    .feed_bottom {
+      vertical-align: top;
+    }
+
+  }/* .feed */
+
+  #pickup {
+    margin: 16px 0 0 0;
+
+    .middle {
+      background: image-url('components/side/bg_event_middle.png') repeat-y;
+
+      .title {
+        posision: absolute;
+        width: 272px;
+        margin: -4px auto 14px auto;
+      }
+
+      .body {
+        width: 239px;
+        margin: 0 auto;
+        padding-bottom: 9px;
+
+        ul {
+          background: image-url('components/side/bdr_feed.png') bottom left no-repeat;
+
+          li {
+            min-height: 104px; // FIXME: ダミー
+            padding: 9px 0;
+            background: image-url('components/side/bdr_feed.png') top left no-repeat;
+          }
+        }
+
+      }
+    }
+
+    .feed_bottom {
+      vertical-align: top;
+    }
+
+  }/* #pickup */
+
+  #blog .middle {
+
+    .title {
+      width: 107px;
+    }
+
+    .body {
+      ul li {
+        @include clearfix;
+
+        .pic {
+          float: left;
+          width: 60px;
+        }
+
+        .text {
+          float: right;
+          width: 170px;
+        }
+
+      }
+    }
+
+  }/* #blog .middle */
+
+  #news .middle .title {
+    width: 137px;
+  }
+
 }

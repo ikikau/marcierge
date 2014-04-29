@@ -3,66 +3,92 @@
   =image_tag 'http://placehold.it/300x252.png', size: '300x252'
 
 
-#pickup.feed
+#pickup
 
-  .title
-    %h2= image_tag 'components/side/h_event.png', size: '272×44', alt: '人気 &amp; 注目のイベント'
+  = image_tag 'components/side/bg_event_top.png', size: '300×17', class: 'feed_top'
 
-  .body
+  .middle
 
-    %ul
-      %li 1位
-      %li 2位
-      %li 3位
+    .title
+      %h2= image_tag 'components/side/h_event.png', size: '272×44', alt: '人気 &amp; 注目のイベント'
+
+    .body
+
+      %ul
+        %li
+          = image_tag 'components/side/icon_rank_first.png', size: '34×49', alt: '1位'
+        %li
+          = image_tag 'components/side/icon_rank_second.png', size: '34×49', alt: '2位'
+        %li
+          = image_tag 'components/side/icon_rank_third.png', size: '35×49', alt: '3位'
+
+  = image_tag 'components/side/bg_event_bottom.png', size: '300×16', class: 'feed_bottom'
 
 
 #blog.feed
 
-  .title
-    %h2= image_tag 'components/side/h_blog.png', size: '107×41', alt: 'ブログ'
+  = image_tag 'components/side/bg_blog_top.png', size: '300×18', class: 'feed_top'
 
-  .body
+  .middle
 
-    %ul
-      %li
-        =image_tag 'http://placehold.it/60x60.png', size: '60x60'
-        %p.date 2013.12.10
-        %p.title テキストが入りますテキストが入りますテキストが入ります。
+    .title
+      %h2= image_tag 'components/side/h_blog.png', size: '107×41', alt: 'ブログ'
 
-      %li
-        =image_tag 'http://placehold.it/60x60.png', size: '60x60'
-        %p.date 2013.12.10
-        %p.title テキストが入りますテキストが入りますテキストが入ります。
+    .body
 
-      %li
-        =image_tag 'http://placehold.it/60x60.png', size: '60x60'
-        %p.date 2013.12.10
-        %p.title テキストが入りますテキストが入りますテキストが入ります。
+      %ul
+        %li
+          .pic
+            =image_tag 'http://placehold.it/60x60.png', size: '60x60'
+          .text
+            %p.date 2013.12.10
+            %p.desc テキストが入りますテキストが入りますテキストが入ります。
 
-  .more
-    = image_tag 'components/side/btn_blog_more.png', size: '190x30', alt: '全てのBLOGを見る'
+        %li
+          .pic
+            =image_tag 'http://placehold.it/60x60.png', size: '60x60'
+          .text
+            %p.date 2013.12.10
+            %p.desc テキストが入りますテキストが入りますテキストが入ります。
+
+        %li
+          .pic
+            =image_tag 'http://placehold.it/60x60.png', size: '60x60'
+          .text
+            %p.date 2013.12.10
+            %p.desc テキストが入りますテキストが入りますテキストが入ります。
+
+    .more
+      = link_to image_tag('components/side/btn_blog_more.png', size: '190x30', alt: '全てのBLOGを見る'), '#'
+
+  = image_tag 'components/side/bg_blog_bottom.png', size: '300×16', class: 'feed_bottom'
 
 
 #news.feed
 
-  .title
-    %h2= image_tag 'components/side/h_news.png', size: '137×45', alt: 'ブログ'
+  = image_tag 'components/side/bg_blog_top.png', size: '300×18', class: 'feed_top'
 
-  .body
+  .middle
 
-    %ul
-      %li
-        %p.date 2013.12.10
-        %p.txt 2月のイベントが追加されました！
-      %li
-        %p.date 2013.12.10
-        %p.txt 2月のイベントが追加されました！
-      %li
-        %p.date 2013.12.10
-        %p.txt 2月のイベントが追加されました！
-      %li
-        %p.date 2013.12.10
-        %p.txt 2月のイベントが追加されました！
+    .title
+      %h2= image_tag 'components/side/h_news.png', size: '137×45', alt: 'ブログ'
 
-  .more
-    = image_tag 'components/side/btn_news_more.png', size: '190x30', alt: '全てのニュースを見る'
+    .body
+
+      %ul
+        %li
+          %p.date 2013.12.10
+          %p.desc 2月のイベントが追加されました！
+
+        %li
+          %p.date 2013.12.10
+          %p.desc 2月のイベントが追加されました！
+
+        %li
+          %p.date 2013.12.10
+          %p.desc 2月のイベントが追加されました！
+
+    .more
+      = link_to image_tag('components/side/btn_news_more.png', size: '190x30', alt: '全てのニュースを見る'), '#'
+
+  = image_tag 'components/side/bg_blog_bottom.png', size: '300×16', class: 'feed_bottom'
