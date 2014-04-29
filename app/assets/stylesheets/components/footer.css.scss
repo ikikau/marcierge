@@ -1,9 +1,16 @@
 
 #footer {
+  margin-top: 46px;
+  background: image-url('components/footer/bg_footer_link.png');
+
+  .pagetop {
+    position: absolute;
+    margin: -181px 0 0 734px;
+  }
 
   .copyright {
     height: 58px;
-    background: image-url('common/bg_footer.png');
+    background: image-url('components/footer/bg_footer.png');
     color: #d8af17;
 
     p {

@@ -1,12 +1,12 @@
 
 #ad
-  =image_tag 'http://placehold.it/300x290.png', size: '300x290'
+  =image_tag 'http://placehold.it/300x252.png', size: '300x252'
 
 
-#pickup
+#pickup.feed
 
   .title
-    %h2 人気 & 注目のイベント
+    %h2= image_tag 'components/side/h_event.png', size: '272×44', alt: '人気 &amp; 注目のイベント'
 
   .body
 
@@ -16,10 +16,10 @@
       %li 3位
 
 
-#blog
+#blog.feed
 
   .title
-    %h2 ブログ
+    %h2= image_tag 'components/side/h_blog.png', size: '107×41', alt: 'ブログ'
 
   .body
 
@@ -40,13 +40,13 @@
         %p.title テキストが入りますテキストが入りますテキストが入ります。
 
   .more
-    = image_tag 'http://placehold.it/190x30.png', size: '190x30'
+    = image_tag 'components/side/btn_blog_more.png', size: '190x30', alt: '全てのBLOGを見る'
 
 
-#news
+#news.feed
 
   .title
-    %h2 ニュース
+    %h2= image_tag 'components/side/h_news.png', size: '137×45', alt: 'ブログ'
 
   .body
 
@@ -65,4 +65,4 @@
         %p.txt 2月のイベントが追加されました！
 
   .more
-    = image_tag 'http://placehold.it/190x30.png', size: '190x30'
+    = image_tag 'components/side/btn_news_more.png', size: '190x30', alt: '全てのニュースを見る'

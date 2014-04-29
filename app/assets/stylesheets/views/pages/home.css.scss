@@ -2,7 +2,6 @@
 #pages.home {
 
   #main {
-    width: 650px;
 
     #near_event {
       margin-bottom: 20px;
@@ -35,9 +34,9 @@
         display: block;
         width: 628px;
         height: 300px;
-        margin: 5px 0 0 10px;
+        margin: 6px 0 0 10px;
 
-        &:hover { opacity: 0.8; }
+        &:hover { opacity: $opacity-hover; }
 
         img {
           margin-top: 194px;

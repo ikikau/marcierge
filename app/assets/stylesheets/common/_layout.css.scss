@@ -15,5 +15,16 @@ body {
 }
 
 #contents {
+  @include clearfix;
   margin: 18px 0;
+
+  #main {
+    float: left;
+    width: 650px;
+  }
+
+  #side {
+    float: right;
+    width: 300px;
+  }
 }
