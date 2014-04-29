@@ -17,6 +17,8 @@
     margin: 70px auto 60px auto;
     width: 470px;
 
+    a { color: #333333; }
+
     ul {
       float: left;
 
@@ -25,10 +27,18 @@
         background: image-url('components/footer/ico_footer_list.png') no-repeat top left;
         padding-left: 24px;
         margin-bottom: 10px;
+        font-size: 11px;
       }
 
       &.event {
         width: 199px;
+
+        li:first-child {
+          font-size: 12px;
+        }
+      }
+      &.sitemap {
+        font-size: 12px;
       }
     }
 
