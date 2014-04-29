@@ -42,7 +42,7 @@ namespace :deploy do
   end
 
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "cd #{current_release}; RAILS_ENV=production bundle exec rake unicorn:restart"
+    run "cd #{release_path}; RAILS_ENV=production bundle exec rake unicorn:restart"
     # run "touch #{current_release}/tmp/restart.txt"
   end
 end
