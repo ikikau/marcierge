@@ -8,6 +8,28 @@
     margin: -181px 0 0 734px;
   }
 
+  .link {
+    @include clearfix;
+    margin: 70px auto 60px auto;
+    width: 470px;
+
+    ul {
+      float: left;
+
+      li {
+        height: 16px;
+        background: image-url('components/footer/ico_footer_list.png') no-repeat top left;
+        padding-left: 24px;
+        margin-bottom: 10px;
+      }
+
+      &.event {
+        width: 199px;
+      }
+    }
+
+  }
+
   .copyright {
     height: 58px;
     background: image-url('components/footer/bg_footer.png');
