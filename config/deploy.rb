@@ -56,7 +56,7 @@ namespace :bundle do
 
 end
 
-after 'deploy', 'deploy:migrate'
+after 'bundle:install', 'deploy:migrate'
 after 'deploy:create_symlink', 'deploy:symlink_contents'
 # after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
 # after 'deploy:restart', 'unicorn:restart'   # app preloaded
