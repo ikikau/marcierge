@@ -1,5 +1,15 @@
 module ApplicationHelper
 
+  def default_meta_tags
+  {
+    :title       => 'Marcierge',
+    # :description => 'Member login page.',
+    # :keywords    => 'Site, Login, Members',
+    # :separator   => "&mdash;".html_safe,
+  }
+  end
+
+
   #  Scripts Loader
   #-----------------------------------------------
   def view_asset(action = true, dir = 'javascripts', ext = '.js*')

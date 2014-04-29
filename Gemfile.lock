@@ -121,6 +121,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta-tags (2.0.0)
+      actionpack (>= 3.0.0)
     meta_request (0.2.8)
       callsite
       rack-contrib
@@ -263,6 +265,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   kaminari
+  meta-tags
   meta_request
   mysql2
   oj
