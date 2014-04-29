@@ -1,0 +1,89 @@
+
+#header {
+  @include clearfix;
+  background: #ffdd5f;
+
+  h1 {
+    float: left;
+    margin-left: 2px;
+  }
+
+  .sub {
+    @include clearfix;
+    width: 543px;
+    float: right;
+
+    .info {
+      @include clearfix;
+      width: 301px;
+      float: left;
+      margin-top: 43px;
+
+      li {
+        float: left;
+
+        &:first-child {
+          margin-right: 16px;
+        }
+      }
+    }
+
+    .social {
+      @include clearfix;
+      flaot: right;
+
+      li {
+        float: left;
+
+        &:first-child {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+#navigator {
+  height: 62px;
+  background: #fff image-url('components/header/bg_nav.png') repeat-x top left;
+
+  .container {
+    height: 60px;
+    background: #fff image-url('components/header/bdr_nav.png') no-repeat 0 50%;
+
+    ul {
+      @include clearfix;
+
+      li {
+        float: left;
+        margin-left: 1px;
+
+        a {
+          display: block;
+          padding: 21px 0;
+
+          img {
+            display: block;
+            margin: 0 auto !important;
+          }
+        }
+
+        &.event a {
+          width: 234px;
+        }
+
+        &.feature a {
+          width: 238px;
+        }
+
+        &.atoz a {
+          width: 311px;
+        }
+
+        &.blog a {
+          width: 180px;
+        }
+      }
+    }
+  }
+}

@@ -15,6 +15,10 @@
 
   %body{ id: controller_name, class: action_name }
 
+    - if content_for? :overlay
+      #overlay
+        = yield :overlay
+
     = render 'header'
 
     #contents

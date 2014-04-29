@@ -1,19 +1,25 @@
-%header
-  %h1
-    = image_tag 'http://placehold.it/300x100.png', size: '300x100', alt: 'marcierge'
+%header#header
 
-  .sub
-    %ul.info
-      %li マルシェルジュとは？
-      %li 掲載のお問い合わせ
+  .container
 
-    %ul.social
-      %li twitter
-      %li facebook
+    %h1
+      = link_to image_tag('components/header/logo.png', size: '264×91', alt: 'ちょっと週末の贅沢をお届け。 marcierge'), '#'
 
-%nav
-  %ul
-    %li イベントを探す
-    %li 特集・おすすめ
-    %li AtoZ Shop&Creator File
-    %li BLOG
+    .sub
+      %ul.info
+        %li= link_to image_tag('components/header/nav_about.png', alt: 'マルシェルジュとは？'), '#'
+        %li= link_to image_tag('components/header/nav_contact.png', alt: '掲載のお問い合わせ'), '#'
+
+      %ul.social
+        %li= link_to image_tag('components/header/btn_social_twitter.png', size: '118×68', alt: 'Twitter'), '#'
+        %li= link_to image_tag('components/header/btn_social_facebook.png', size: '118×68', alt: 'Facebook'), '#'
+
+%nav#navigator
+
+  .container
+
+    %ul
+      %li.event= link_to image_tag('components/header/nav_event.png', size: '119×21', alt: 'イベントを探す'), '#'
+      %li.feature= link_to image_tag('components/header/nav_feature.png', size: '50×21', alt: '特集'), '#'
+      %li.atoz= link_to image_tag('components/header/nav_atoz.png', size: '220×21', alt: 'AtoZ Shop&Creator File'), '#'
+      %li.blog= link_to image_tag('components/header/nav_blog.png', size: '70×21', alt: 'BLOG'), '#'

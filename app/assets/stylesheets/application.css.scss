@@ -21,3 +21,12 @@
 
 @import "views/**/*";
 
+
+/* FIXME: debug用CSS */
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -484px;
+  opacity: 0.2;
+}
