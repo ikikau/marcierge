@@ -9,7 +9,7 @@
 
 いつもの方法で。
 
-```sh
+```
 $ bundle
 $ bundle exec rake db:create
 $ bundle exec rake db:migrate
@@ -36,19 +36,8 @@ public/system
 基本的にパスワードはそのまま `password` として下さい。  
 わかりやすいので。
 
-<table>
-  <thead>
-    <tr>
-      <th>メールアドレス</th>
-      <th>パスワード</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>yuki@creasty.com</td>
-      <td>password</td>
-    </tr>
-  </tbody>
-</table>
+|メールアドレス|パスワード|
+|:----|:----|
+|yuki@creasty.com|password|
 
 
